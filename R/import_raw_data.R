@@ -111,6 +111,7 @@ ox_theme_results <- read_csv("data-raw/people_promise_and_themes_oxleas.csv")
 
 themes <- read_csv("maps/themes.csv")
 ox_teams <- read_csv("maps/ox_teams.csv")
+questions <- read_csv("maps/questions.csv")
 
 ##########################
 # ~~~ RETURN OUTPUTS ~~~ #
@@ -120,6 +121,7 @@ ox_teams <- read_csv("maps/ox_teams.csv")
 return(list(
   nat_results = nat_results,
   themes = themes,
+  questions = questions,
   ox_teams = ox_teams,
   ox_q_aggregate_results = ox_q_aggregate_results,
   ox_q_option_results = ox_q_option_results,
