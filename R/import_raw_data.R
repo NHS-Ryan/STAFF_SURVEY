@@ -109,7 +109,8 @@ ox_theme_results <- read_csv("data-raw/people_promise_and_themes_oxleas.csv")
 
 # Source: created locally by Oxleas
 
-themes <- read_csv("data-raw/nhs_ss_theme_groups.csv")
+themes <- read_csv("maps/themes.csv")
+ox_teams <- read_csv("maps/ox_teams.csv")
 
 ##########################
 # ~~~ RETURN OUTPUTS ~~~ #
@@ -119,6 +120,7 @@ themes <- read_csv("data-raw/nhs_ss_theme_groups.csv")
 return(list(
   nat_results = nat_results,
   themes = themes,
+  ox_teams = ox_teams,
   ox_q_aggregate_results = ox_q_aggregate_results,
   ox_q_option_results = ox_q_option_results,
   ox_theme_results = ox_theme_results
