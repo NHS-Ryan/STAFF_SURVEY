@@ -1,0 +1,844 @@
+q_id,q_text,option_id,option_code
+1,"In the last 12 months, have you had an appraisal, annual review, development review, or Knowledge and Skills Framework (KSF) development review?",1,Yes
+1,"In the last 12 months, have you had an appraisal, annual review, development review, or Knowledge and Skills Framework (KSF) development review?",2,No
+1,"In the last 12 months, have you had an appraisal, annual review, development review, or Knowledge and Skills Framework (KSF) development review?",3,Can't remember
+1,"In the last 12 months, have you had an appraisal, annual review, development review, or Knowledge and Skills Framework (KSF) development review?",99,Missing
+2,I feel supported to develop my potential.,1,Strongly disagree
+2,I feel supported to develop my potential.,2,Disagree
+2,I feel supported to develop my potential.,3,Neither agree nor disagree
+2,I feel supported to develop my potential.,4,Agree
+2,I feel supported to develop my potential.,5,Strongly agree
+2,I feel supported to develop my potential.,99,Missing
+3,"Do you look after, or give any help or support to family members, friends, neighbours or others because of either: long term physical or mental ill health / disability, or problems related to old age?",1,Yes
+3,"Do you look after, or give any help or support to family members, friends, neighbours or others because of either: long term physical or mental ill health / disability, or problems related to old age?",2,No
+3,"Do you look after, or give any help or support to family members, friends, neighbours or others because of either: long term physical or mental ill health / disability, or problems related to old age?",99,Missing
+4,I am able to access clinical supervision opportunities when I need to.,9,Not applicable
+4,I am able to access clinical supervision opportunities when I need to.,1,Strongly disagree
+4,I am able to access clinical supervision opportunities when I need to.,2,Disagree
+4,I am able to access clinical supervision opportunities when I need to.,3,Neither agree nor disagree
+4,I am able to access clinical supervision opportunities when I need to.,4,Agree
+4,I am able to access clinical supervision opportunities when I need to.,5,Strongly agree
+4,I am able to access clinical supervision opportunities when I need to.,99,Missing
+5,I am trusted to do my job.,1,Strongly disagree
+5,I am trusted to do my job.,2,Disagree
+5,I am trusted to do my job.,3,Neither agree nor disagree
+5,I am trusted to do my job.,4,Agree
+5,I am trusted to do my job.,5,Strongly agree
+5,I am trusted to do my job.,99,Missing
+6,I feel valued by my team.,1,Strongly disagree
+6,I feel valued by my team.,2,Disagree
+6,I feel valued by my team.,3,Neither agree nor disagree
+6,I feel valued by my team.,4,Agree
+6,I feel valued by my team.,5,Strongly agree
+6,I feel valued by my team.,99,Missing
+7,"In the last month have you seen any errors, near misses, or incidents that could have hurt staff and/or patients/service users?",1,Yes
+7,"In the last month have you seen any errors, near misses, or incidents that could have hurt staff and/or patients/service users?",2,No
+7,"In the last month have you seen any errors, near misses, or incidents that could have hurt staff and/or patients/service users?",99,Missing
+8,I am able to make suggestions to improve the work of my team / department.,1,Strongly disagree
+8,I am able to make suggestions to improve the work of my team / department.,2,Disagree
+8,I am able to make suggestions to improve the work of my team / department.,3,Neither agree nor disagree
+8,I am able to make suggestions to improve the work of my team / department.,4,Agree
+8,I am able to make suggestions to improve the work of my team / department.,5,Strongly agree
+8,I am able to make suggestions to improve the work of my team / department.,99,Missing
+9,"How often, if at all, are you exhausted at the thought of another day/shift at work?",1,Never
+9,"How often, if at all, are you exhausted at the thought of another day/shift at work?",2,Rarely
+9,"How often, if at all, are you exhausted at the thought of another day/shift at work?",3,Sometimes
+9,"How often, if at all, are you exhausted at the thought of another day/shift at work?",4,Often
+9,"How often, if at all, are you exhausted at the thought of another day/shift at work?",5,Always
+9,"How often, if at all, are you exhausted at the thought of another day/shift at work?",99,Missing
+10,I look forward to going to work.,1,Never
+10,I look forward to going to work.,2,Rarely
+10,I look forward to going to work.,3,Sometimes
+10,I look forward to going to work.,4,Often
+10,I look forward to going to work.,5,Always
+10,I look forward to going to work.,99,Missing
+11,I have unrealistic time pressures.,1,Never
+11,I have unrealistic time pressures.,2,Rarely
+11,I have unrealistic time pressures.,3,Sometimes
+11,I have unrealistic time pressures.,4,Often
+11,I have unrealistic time pressures.,5,Always
+11,I have unrealistic time pressures.,99,Missing
+12,I achieve a good balance between my work life and my home life.,1,Strongly disagree
+12,I achieve a good balance between my work life and my home life.,2,Disagree
+12,I achieve a good balance between my work life and my home life.,3,Neither agree nor disagree
+12,I achieve a good balance between my work life and my home life.,4,Agree
+12,I achieve a good balance between my work life and my home life.,5,Strongly agree
+12,I achieve a good balance between my work life and my home life.,99,Missing
+13,I am able to make improvements happen in my area of work.,1,Strongly disagree
+13,I am able to make improvements happen in my area of work.,2,Disagree
+13,I am able to make improvements happen in my area of work.,3,Neither agree nor disagree
+13,I am able to make improvements happen in my area of work.,4,Agree
+13,I am able to make improvements happen in my area of work.,5,Strongly agree
+13,I am able to make improvements happen in my area of work.,99,Missing
+14,"I think that my organisation respects individual differences (e.g. cultures, working styles, backgrounds, ideas, etc).",1,Strongly disagree
+14,"I think that my organisation respects individual differences (e.g. cultures, working styles, backgrounds, ideas, etc).",2,Disagree
+14,"I think that my organisation respects individual differences (e.g. cultures, working styles, backgrounds, ideas, etc).",3,Neither agree nor disagree
+14,"I think that my organisation respects individual differences (e.g. cultures, working styles, backgrounds, ideas, etc).",4,Agree
+14,"I think that my organisation respects individual differences (e.g. cultures, working styles, backgrounds, ideas, etc).",5,Strongly agree
+14,"I think that my organisation respects individual differences (e.g. cultures, working styles, backgrounds, ideas, etc).",99,Missing
+15,Has your employer made reasonable adjustment(s) to enable you to carry out your work?,1,Yes
+15,Has your employer made reasonable adjustment(s) to enable you to carry out your work?,2,No
+15,Has your employer made reasonable adjustment(s) to enable you to carry out your work?,3,No adjustment required
+15,Has your employer made reasonable adjustment(s) to enable you to carry out your work?,99,Missing
+16,I would recommend my organisation as a place to work.,1,Strongly disagree
+16,I would recommend my organisation as a place to work.,2,Disagree
+16,I would recommend my organisation as a place to work.,3,Neither agree nor disagree
+16,I would recommend my organisation as a place to work.,4,Agree
+16,I would recommend my organisation as a place to work.,5,Strongly agree
+16,I would recommend my organisation as a place to work.,99,Missing
+17,How many hours a week are you contracted to work?,1,Up to 29 hours
+17,How many hours a week are you contracted to work?,2,30 or more hours
+17,How many hours a week are you contracted to work?,99,Missing
+18,My level of pay.,1,Very dissatisfied
+18,My level of pay.,2,Dissatisfied
+18,My level of pay.,3,Neither satisfied nor dissatisfied
+18,My level of pay.,4,Satisfied
+18,My level of pay.,5,Very satisfied
+18,My level of pay.,99,Missing
+19,I am able to meet all the conflicting demands on my time at work.,1,Strongly disagree
+19,I am able to meet all the conflicting demands on my time at work.,2,Disagree
+19,I am able to meet all the conflicting demands on my time at work.,3,Neither agree nor disagree
+19,I am able to meet all the conflicting demands on my time at work.,4,Agree
+19,I am able to meet all the conflicting demands on my time at work.,5,Strongly agree
+19,I am able to meet all the conflicting demands on my time at work.,99,Missing
+20,I will probably look for a job at a new organisation in the next 12 months.,1,Strongly disagree
+20,I will probably look for a job at a new organisation in the next 12 months.,2,Disagree
+20,I will probably look for a job at a new organisation in the next 12 months.,3,Neither agree nor disagree
+20,I will probably look for a job at a new organisation in the next 12 months.,4,Agree
+20,I will probably look for a job at a new organisation in the next 12 months.,5,Strongly agree
+20,I will probably look for a job at a new organisation in the next 12 months.,99,Missing
+21,If I spoke up about something that concerned me I am confident my organisation would address my concern.,1,Strongly disagree
+21,If I spoke up about something that concerned me I am confident my organisation would address my concern.,2,Disagree
+21,If I spoke up about something that concerned me I am confident my organisation would address my concern.,3,Neither agree nor disagree
+21,If I spoke up about something that concerned me I am confident my organisation would address my concern.,4,Agree
+21,If I spoke up about something that concerned me I am confident my organisation would address my concern.,5,Strongly agree
+21,If I spoke up about something that concerned me I am confident my organisation would address my concern.,99,Missing
+22,I enjoy working with the colleagues in my team.,1,Strongly disagree
+22,I enjoy working with the colleagues in my team.,2,Disagree
+22,I enjoy working with the colleagues in my team.,3,Neither agree nor disagree
+22,I enjoy working with the colleagues in my team.,4,Agree
+22,I enjoy working with the colleagues in my team.,5,Strongly agree
+22,I enjoy working with the colleagues in my team.,99,Missing
+23,I can eat nutritious and affordable food while I am working.,1,Never
+23,I can eat nutritious and affordable food while I am working.,2,Rarely
+23,I can eat nutritious and affordable food while I am working.,3,Sometimes
+23,I can eat nutritious and affordable food while I am working.,4,Often
+23,I can eat nutritious and affordable food while I am working.,5,Always
+23,I can eat nutritious and affordable food while I am working.,99,Missing
+24,I receive the respect I deserve from my colleagues at work.,1,Strongly disagree
+24,I receive the respect I deserve from my colleagues at work.,2,Disagree
+24,I receive the respect I deserve from my colleagues at work.,3,Neither agree nor disagree
+24,I receive the respect I deserve from my colleagues at work.,4,Agree
+24,I receive the respect I deserve from my colleagues at work.,5,Strongly agree
+24,I receive the respect I deserve from my colleagues at work.,99,Missing
+25,My organisation takes positive action on health and well-being.,1,Strongly disagree
+25,My organisation takes positive action on health and well-being.,2,Disagree
+25,My organisation takes positive action on health and well-being.,3,Neither agree nor disagree
+25,My organisation takes positive action on health and well-being.,4,Agree
+25,My organisation takes positive action on health and well-being.,5,Strongly agree
+25,My organisation takes positive action on health and well-being.,99,Missing
+26,My immediate manager gives me clear feedback on my work.,1,Strongly disagree
+26,My immediate manager gives me clear feedback on my work.,2,Disagree
+26,My immediate manager gives me clear feedback on my work.,3,Neither agree nor disagree
+26,My immediate manager gives me clear feedback on my work.,4,Agree
+26,My immediate manager gives me clear feedback on my work.,5,Strongly agree
+26,My immediate manager gives me clear feedback on my work.,99,Missing
+27,I would feel secure raising concerns about unsafe clinical practice.,1,Strongly disagree
+27,I would feel secure raising concerns about unsafe clinical practice.,2,Disagree
+27,I would feel secure raising concerns about unsafe clinical practice.,3,Neither agree nor disagree
+27,I would feel secure raising concerns about unsafe clinical practice.,4,Agree
+27,I would feel secure raising concerns about unsafe clinical practice.,5,Strongly agree
+27,I would feel secure raising concerns about unsafe clinical practice.,99,Missing
+28,"I have adequate materials, supplies and equipment to do my work.",1,Strongly disagree
+28,"I have adequate materials, supplies and equipment to do my work.",2,Disagree
+28,"I have adequate materials, supplies and equipment to do my work.",3,Neither agree nor disagree
+28,"I have adequate materials, supplies and equipment to do my work.",4,Agree
+28,"I have adequate materials, supplies and equipment to do my work.",5,Strongly agree
+28,"I have adequate materials, supplies and equipment to do my work.",99,Missing
+29,"How often, if at all, does your work frustrate you?",1,Never
+29,"How often, if at all, does your work frustrate you?",2,Rarely
+29,"How often, if at all, does your work frustrate you?",3,Sometimes
+29,"How often, if at all, does your work frustrate you?",4,Often
+29,"How often, if at all, does your work frustrate you?",5,Always
+29,"How often, if at all, does your work frustrate you?",99,Missing
+30,It helped me to improve how I do my job.,1,"Yes, definitely"
+30,It helped me to improve how I do my job.,2,"Yes, to some extent"
+30,It helped me to improve how I do my job.,3,No
+30,It helped me to improve how I do my job.,99,Missing
+31,I am enthusiastic about my job.,1,Never
+31,I am enthusiastic about my job.,2,Rarely
+31,I am enthusiastic about my job.,3,Sometimes
+31,I am enthusiastic about my job.,4,Often
+31,I am enthusiastic about my job.,5,Always
+31,I am enthusiastic about my job.,99,Missing
+32,On what grounds have you experienced discrimination? Sexual orientation,1,Sexual Orientation
+32,On what grounds have you experienced discrimination? Sexual orientation,2,Not Selected
+32,On what grounds have you experienced discrimination? Sexual orientation,99,Missing
+33,On what grounds have you experienced discrimination? Sex,1,Sex
+33,On what grounds have you experienced discrimination? Sex,2,Not Selected
+33,On what grounds have you experienced discrimination? Sex,99,Missing
+34,On what grounds have you experienced discrimination? Religion or belief,1,Religion or belief
+34,On what grounds have you experienced discrimination? Religion or belief,2,Not Selected
+34,On what grounds have you experienced discrimination? Religion or belief,99,Missing
+35,On what grounds have you experienced discrimination? Race,1,Race
+35,On what grounds have you experienced discrimination? Race,2,Not Selected
+35,On what grounds have you experienced discrimination? Race,99,Missing
+36,On what grounds have you experienced discrimination? Pregnancy and maternity,1,Pregnancy and maternity
+36,On what grounds have you experienced discrimination? Pregnancy and maternity,2,Not Selected
+36,On what grounds have you experienced discrimination? Pregnancy and maternity,99,Missing
+37,On what grounds have you experienced discrimination? Other,1,Other
+37,On what grounds have you experienced discrimination? Other,2,Not Selected
+37,On what grounds have you experienced discrimination? Other,99,Missing
+38,On what grounds have you experienced discrimination? Marriage and civil partnership,1,Marriage and civil partnership
+38,On what grounds have you experienced discrimination? Marriage and civil partnership,2,Not Selected
+38,On what grounds have you experienced discrimination? Marriage and civil partnership,99,Missing
+39,On what grounds have you experienced discrimination? Gender reassignment,1,Gender reassignment
+39,On what grounds have you experienced discrimination? Gender reassignment,2,Not Selected
+39,On what grounds have you experienced discrimination? Gender reassignment,99,Missing
+40,On what grounds have you experienced discrimination? Disability,1,Disability
+40,On what grounds have you experienced discrimination? Disability,2,Not Selected
+40,On what grounds have you experienced discrimination? Disability,99,Missing
+41,On what grounds have you experienced discrimination? Age,1,Age
+41,On what grounds have you experienced discrimination? Age,2,Not Selected
+41,On what grounds have you experienced discrimination? Age,99,Missing
+42,I have a choice in deciding how to do my work.,1,Never
+42,I have a choice in deciding how to do my work.,2,Rarely
+42,I have a choice in deciding how to do my work.,3,Sometimes
+42,I have a choice in deciding how to do my work.,4,Often
+42,I have a choice in deciding how to do my work.,5,Always
+42,I have a choice in deciding how to do my work.,99,Missing
+43,In the last 12 months have you experienced musculoskeletal problems (MSK) as a result of work activities?,1,Yes
+43,In the last 12 months have you experienced musculoskeletal problems (MSK) as a result of work activities?,2,No
+43,In the last 12 months have you experienced musculoskeletal problems (MSK) as a result of work activities?,99,Missing
+44,In the last three months have you ever come to work despite not feeling well enough to perform your duties?,1,Yes
+44,In the last three months have you ever come to work despite not feeling well enough to perform your duties?,2,No
+44,In the last three months have you ever come to work despite not feeling well enough to perform your duties?,99,Missing
+45,If a friend or relative needed treatment I would be happy with the standard of care provided by this organisation.,1,Strongly disagree
+45,If a friend or relative needed treatment I would be happy with the standard of care provided by this organisation.,2,Disagree
+45,If a friend or relative needed treatment I would be happy with the standard of care provided by this organisation.,3,Neither agree nor disagree
+45,If a friend or relative needed treatment I would be happy with the standard of care provided by this organisation.,4,Agree
+45,If a friend or relative needed treatment I would be happy with the standard of care provided by this organisation.,5,Strongly agree
+45,If a friend or relative needed treatment I would be happy with the standard of care provided by this organisation.,99,Missing
+46,"If you are considering leaving your current job, what would be your most likely destination?",9,I am not considering leaving my current job.
+46,"If you are considering leaving your current job, what would be your most likely destination?",1,I would want to move to another job within this organisation.
+46,"If you are considering leaving your current job, what would be your most likely destination?",2,I would want to move to a job in a different NHS Trust/organisation.
+46,"If you are considering leaving your current job, what would be your most likely destination?",3,"I would want to move to a job in healthcare, but outside the NHS."
+46,"If you are considering leaving your current job, what would be your most likely destination?",4,I would want to move to a job outside healthcare.
+46,"If you are considering leaving your current job, what would be your most likely destination?",5,I would retire or take a career break.
+46,"If you are considering leaving your current job, what would be your most likely destination?",99,Missing
+47,I feel a strong personal attachment to my team.,1,Strongly disagree
+47,I feel a strong personal attachment to my team.,2,Disagree
+47,I feel a strong personal attachment to my team.,3,Neither agree nor disagree
+47,I feel a strong personal attachment to my team.,4,Agree
+47,I feel a strong personal attachment to my team.,5,Strongly agree
+47,I feel a strong personal attachment to my team.,99,Missing
+48,"When you were aged about 14, what was the occupation of the main or highest income earner?",1,Professional occupations
+48,"When you were aged about 14, what was the occupation of the main or highest income earner?",2,"Managers, including senior, middle, or junior"
+48,"When you were aged about 14, what was the occupation of the main or highest income earner?",3,Clerical and intermediate occupations
+48,"When you were aged about 14, what was the occupation of the main or highest income earner?",4,"Routine, semi-routine manual or service occupations"
+48,"When you were aged about 14, what was the occupation of the main or highest income earner?",5,Technical and craft occupations
+48,"When you were aged about 14, what was the occupation of the main or highest income earner?",6,I don't know
+48,"When you were aged about 14, what was the occupation of the main or highest income earner?",7,Prefer not to say
+48,"When you were aged about 14, what was the occupation of the main or highest income earner?",99,Missing
+49,"When you were aged about 14, was the main or highest income earner in your household an employee, self-employed, or not working?",1,Employee
+49,"When you were aged about 14, was the main or highest income earner in your household an employee, self-employed, or not working?",2,Self-employed with employees
+49,"When you were aged about 14, was the main or highest income earner in your household an employee, self-employed, or not working?",3,Self-employed or freelancer without employees
+49,"When you were aged about 14, was the main or highest income earner in your household an employee, self-employed, or not working?",4,They were not working
+49,"When you were aged about 14, was the main or highest income earner in your household an employee, self-employed, or not working?",5,Prefer not to say
+49,"When you were aged about 14, was the main or highest income earner in your household an employee, self-employed, or not working?",99,Missing
+50,"When you were aged about 14, how many people worked for the main or highest income earner's employer?",1,Jan-24
+50,"When you were aged about 14, how many people worked for the main or highest income earner's employer?",2,25 or more
+50,"When you were aged about 14, how many people worked for the main or highest income earner's employer?",3,I don't know
+50,"When you were aged about 14, how many people worked for the main or highest income earner's employer?",4,Prefer not to say
+50,"When you were aged about 14, how many people worked for the main or highest income earner's employer?",99,Missing
+51,"When you were aged about 14, how many people did the main or highest income earner employ?",1,Jan-24
+51,"When you were aged about 14, how many people did the main or highest income earner employ?",2,25 or more
+51,"When you were aged about 14, how many people did the main or highest income earner employ?",3,I don't know
+51,"When you were aged about 14, how many people did the main or highest income earner employ?",4,Prefer not to say
+51,"When you were aged about 14, how many people did the main or highest income earner employ?",99,Missing
+52,"When you were aged about 14, did the main or highest income earner formally supervise any other employees?",1,Yes
+52,"When you were aged about 14, did the main or highest income earner formally supervise any other employees?",2,No
+52,"When you were aged about 14, did the main or highest income earner formally supervise any other employees?",3,I don't know
+52,"When you were aged about 14, did the main or highest income earner formally supervise any other employees?",4,Prefer not to say
+52,"When you were aged about 14, did the main or highest income earner formally supervise any other employees?",99,Missing
+53,My immediate manager cares about my concerns.,1,Strongly disagree
+53,My immediate manager cares about my concerns.,2,Disagree
+53,My immediate manager cares about my concerns.,3,Neither agree nor disagree
+53,My immediate manager cares about my concerns.,4,Agree
+53,My immediate manager cares about my concerns.,5,Strongly agree
+53,My immediate manager cares about my concerns.,99,Missing
+54,The people I work with show appreciation to one another.,1,Strongly disagree
+54,The people I work with show appreciation to one another.,2,Disagree
+54,The people I work with show appreciation to one another.,3,Neither agree nor disagree
+54,The people I work with show appreciation to one another.,4,Agree
+54,The people I work with show appreciation to one another.,5,Strongly agree
+54,The people I work with show appreciation to one another.,99,Missing
+55,The opportunities for flexible working patterns.,1,Very dissatisfied
+55,The opportunities for flexible working patterns.,2,Dissatisfied
+55,The opportunities for flexible working patterns.,3,Neither satisfied nor dissatisfied
+55,The opportunities for flexible working patterns.,4,Satisfied
+55,The opportunities for flexible working patterns.,5,Very satisfied
+55,The opportunities for flexible working patterns.,99,Missing
+56,"My organisation treats staff who are involved in an error, near miss or incident fairly.",9,Don't know
+56,"My organisation treats staff who are involved in an error, near miss or incident fairly.",1,Strongly disagree
+56,"My organisation treats staff who are involved in an error, near miss or incident fairly.",2,Disagree
+56,"My organisation treats staff who are involved in an error, near miss or incident fairly.",3,Neither agree nor disagree
+56,"My organisation treats staff who are involved in an error, near miss or incident fairly.",4,Agree
+56,"My organisation treats staff who are involved in an error, near miss or incident fairly.",5,Strongly agree
+56,"My organisation treats staff who are involved in an error, near miss or incident fairly.",99,Missing
+57,"We are given feedback about changes made in response to reported errors, near misses and incidents.",9,Don't know
+57,"We are given feedback about changes made in response to reported errors, near misses and incidents.",1,Strongly disagree
+57,"We are given feedback about changes made in response to reported errors, near misses and incidents.",2,Disagree
+57,"We are given feedback about changes made in response to reported errors, near misses and incidents.",3,Neither agree nor disagree
+57,"We are given feedback about changes made in response to reported errors, near misses and incidents.",4,Agree
+57,"We are given feedback about changes made in response to reported errors, near misses and incidents.",5,Strongly agree
+57,"We are given feedback about changes made in response to reported errors, near misses and incidents.",99,Missing
+58,There are opportunities for me to develop my career in this organisation.,1,Strongly disagree
+58,There are opportunities for me to develop my career in this organisation.,2,Disagree
+58,There are opportunities for me to develop my career in this organisation.,3,Neither agree nor disagree
+58,There are opportunities for me to develop my career in this organisation.,4,Agree
+58,There are opportunities for me to develop my career in this organisation.,5,Strongly agree
+58,There are opportunities for me to develop my career in this organisation.,99,Missing
+59,My organisation acts on concerns raised by patients / service users.,1,Strongly disagree
+59,My organisation acts on concerns raised by patients / service users.,2,Disagree
+59,My organisation acts on concerns raised by patients / service users.,3,Neither agree nor disagree
+59,My organisation acts on concerns raised by patients / service users.,4,Agree
+59,My organisation acts on concerns raised by patients / service users.,5,Strongly agree
+59,My organisation acts on concerns raised by patients / service users.,99,Missing
+60,I often think about leaving this organisation.,1,Strongly disagree
+60,I often think about leaving this organisation.,2,Disagree
+60,I often think about leaving this organisation.,3,Neither agree nor disagree
+60,I often think about leaving this organisation.,4,Agree
+60,I often think about leaving this organisation.,5,Strongly agree
+60,I often think about leaving this organisation.,99,Missing
+61,Is your gender identity the same as the sex you were registered at birth?,1,Yes
+61,Is your gender identity the same as the sex you were registered at birth?,2,No
+61,Is your gender identity the same as the sex you were registered at birth?,9,Prefer not to say
+61,Is your gender identity the same as the sex you were registered at birth?,99,Missing
+62,The people I work with are polite and treat each other with respect.,1,Strongly disagree
+62,The people I work with are polite and treat each other with respect.,2,Disagree
+62,The people I work with are polite and treat each other with respect.,3,Neither agree nor disagree
+62,The people I work with are polite and treat each other with respect.,4,Agree
+62,The people I work with are polite and treat each other with respect.,5,Strongly agree
+62,The people I work with are polite and treat each other with respect.,99,Missing
+63,"The last time you experienced harassment, bullying or abuse at work, did you or a colleague report it?",1,"Yes, I reported it"
+63,"The last time you experienced harassment, bullying or abuse at work, did you or a colleague report it?",2,"Yes, a colleague reported it"
+63,"The last time you experienced harassment, bullying or abuse at work, did you or a colleague report it?",3,No
+63,"The last time you experienced harassment, bullying or abuse at work, did you or a colleague report it?",4,Don't know
+63,"The last time you experienced harassment, bullying or abuse at work, did you or a colleague report it?",9,Not applicable
+63,"The last time you experienced harassment, bullying or abuse at work, did you or a colleague report it?",6,"Yes, both myself and a colleague reported it"
+63,"The last time you experienced harassment, bullying or abuse at work, did you or a colleague report it?",99,Missing
+64,"The last time you experienced physical violence at work, did you or a colleague report it?",1,"Yes, I reported it"
+64,"The last time you experienced physical violence at work, did you or a colleague report it?",2,"Yes, a colleague reported it"
+64,"The last time you experienced physical violence at work, did you or a colleague report it?",3,No
+64,"The last time you experienced physical violence at work, did you or a colleague report it?",4,Don't know
+64,"The last time you experienced physical violence at work, did you or a colleague report it?",9,Not applicable
+64,"The last time you experienced physical violence at work, did you or a colleague report it?",6,"Yes, both myself and a colleague reported it"
+64,"The last time you experienced physical violence at work, did you or a colleague report it?",99,Missing
+65,Team members understand each other's roles.,1,Strongly disagree
+65,Team members understand each other's roles.,2,Disagree
+65,Team members understand each other's roles.,3,Neither agree nor disagree
+65,Team members understand each other's roles.,4,Agree
+65,Team members understand each other's roles.,5,Strongly agree
+65,Team members understand each other's roles.,99,Missing
+66,I feel safe to speak up about anything that concerns me in this organisation.,1,Strongly disagree
+66,I feel safe to speak up about anything that concerns me in this organisation.,2,Disagree
+66,I feel safe to speak up about anything that concerns me in this organisation.,3,Neither agree nor disagree
+66,I feel safe to speak up about anything that concerns me in this organisation.,4,Agree
+66,I feel safe to speak up about anything that concerns me in this organisation.,5,Strongly agree
+66,I feel safe to speak up about anything that concerns me in this organisation.,99,Missing
+67,"My organisation encourages us to report errors, near misses or incidents.",9,Don't know
+67,"My organisation encourages us to report errors, near misses or incidents.",1,Strongly disagree
+67,"My organisation encourages us to report errors, near misses or incidents.",2,Disagree
+67,"My organisation encourages us to report errors, near misses or incidents.",3,Neither agree nor disagree
+67,"My organisation encourages us to report errors, near misses or incidents.",4,Agree
+67,"My organisation encourages us to report errors, near misses or incidents.",5,Strongly agree
+67,"My organisation encourages us to report errors, near misses or incidents.",99,Missing
+68,I feel that my role makes a difference to patients / service users.,9,Not applicable to me
+68,I feel that my role makes a difference to patients / service users.,1,Strongly disagree
+68,I feel that my role makes a difference to patients / service users.,2,Disagree
+68,I feel that my role makes a difference to patients / service users.,3,Neither agree nor disagree
+68,I feel that my role makes a difference to patients / service users.,4,Agree
+68,I feel that my role makes a difference to patients / service users.,5,Strongly agree
+68,I feel that my role makes a difference to patients / service users.,99,Missing
+69,I always know what my work responsibilities are.,1,Strongly disagree
+69,I always know what my work responsibilities are.,2,Disagree
+69,I always know what my work responsibilities are.,3,Neither agree nor disagree
+69,I always know what my work responsibilities are.,4,Agree
+69,I always know what my work responsibilities are.,5,Strongly agree
+69,I always know what my work responsibilities are.,99,Missing
+70,The people I work with are understanding and kind to one another.,1,Strongly disagree
+70,The people I work with are understanding and kind to one another.,2,Disagree
+70,The people I work with are understanding and kind to one another.,3,Neither agree nor disagree
+70,The people I work with are understanding and kind to one another.,4,Agree
+70,The people I work with are understanding and kind to one another.,5,Strongly agree
+70,The people I work with are understanding and kind to one another.,99,Missing
+71,"When errors, near misses or incidents are reported, my organisation takes action to ensure that they do not happen again.",9,Don't know
+71,"When errors, near misses or incidents are reported, my organisation takes action to ensure that they do not happen again.",1,Strongly disagree
+71,"When errors, near misses or incidents are reported, my organisation takes action to ensure that they do not happen again.",2,Disagree
+71,"When errors, near misses or incidents are reported, my organisation takes action to ensure that they do not happen again.",3,Neither agree nor disagree
+71,"When errors, near misses or incidents are reported, my organisation takes action to ensure that they do not happen again.",4,Agree
+71,"When errors, near misses or incidents are reported, my organisation takes action to ensure that they do not happen again.",5,Strongly agree
+71,"When errors, near misses or incidents are reported, my organisation takes action to ensure that they do not happen again.",99,Missing
+72,"When you joined this organisation, were you recruited from outside of the UK?",1,Yes
+72,"When you joined this organisation, were you recruited from outside of the UK?",2,No
+72,"When you joined this organisation, were you recruited from outside of the UK?",9,Prefer not to say
+72,"When you joined this organisation, were you recruited from outside of the UK?",99,Missing
+73,This organisation offers me challenging work.,1,Strongly disagree
+73,This organisation offers me challenging work.,2,Disagree
+73,This organisation offers me challenging work.,3,Neither agree nor disagree
+73,This organisation offers me challenging work.,4,Agree
+73,This organisation offers me challenging work.,5,Strongly agree
+73,This organisation offers me challenging work.,99,Missing
+74,"On average, how many additional UNPAID hours do you work per week for this organisation, over and above your contracted hours?",1,0 hours
+74,"On average, how many additional UNPAID hours do you work per week for this organisation, over and above your contracted hours?",2,Up to 5 hours
+74,"On average, how many additional UNPAID hours do you work per week for this organisation, over and above your contracted hours?",3,6-10 hours
+74,"On average, how many additional UNPAID hours do you work per week for this organisation, over and above your contracted hours?",4,11 or more hours
+74,"On average, how many additional UNPAID hours do you work per week for this organisation, over and above your contracted hours?",99,Missing
+75,"On average, how many additional PAID hours do you work per week for this organisation, over and above your contracted hours?",1,0 hours
+75,"On average, how many additional PAID hours do you work per week for this organisation, over and above your contracted hours?",2,Up to 5 hours
+75,"On average, how many additional PAID hours do you work per week for this organisation, over and above your contracted hours?",3,6-10 hours
+75,"On average, how many additional PAID hours do you work per week for this organisation, over and above your contracted hours?",4,11 or more hours
+75,"On average, how many additional PAID hours do you work per week for this organisation, over and above your contracted hours?",99,Missing
+76,My team has enough freedom in how to do its work.,1,Strongly disagree
+76,My team has enough freedom in how to do its work.,2,Disagree
+76,My team has enough freedom in how to do its work.,3,Neither agree nor disagree
+76,My team has enough freedom in how to do its work.,4,Agree
+76,My team has enough freedom in how to do its work.,5,Strongly agree
+76,My team has enough freedom in how to do its work.,99,Missing
+77,Teams within this organisation work well together to achieve their objectives.,1,Strongly disagree
+77,Teams within this organisation work well together to achieve their objectives.,2,Disagree
+77,Teams within this organisation work well together to achieve their objectives.,3,Neither agree nor disagree
+77,Teams within this organisation work well together to achieve their objectives.,4,Agree
+77,Teams within this organisation work well together to achieve their objectives.,5,Strongly agree
+77,Teams within this organisation work well together to achieve their objectives.,99,Missing
+78,What is your main transport into work? Car,1,Car
+78,What is your main transport into work? Car,2,Not selected
+78,What is your main transport into work? Car,99,Missing
+78,What is your main transport into work? Car share,2,Not selected
+78,What is your main transport into work? Car share,1,Car share
+78,What is your main transport into work? Car share,99,Missing
+78,What is your main transport into work? Motorbike,2,Not selected
+78,What is your main transport into work? Motorbike,1,Motorbike
+78,What is your main transport into work? Motorbike,99,Missing
+78,What is your main transport into work? Train / DLR / Crossrail,1,Train / DLR / Crossrail
+78,What is your main transport into work? Train / DLR / Crossrail,2,Not selected
+78,What is your main transport into work? Train / DLR / Crossrail,99,Missing
+78,What is your main transport into work? Bus,1,Bus
+78,What is your main transport into work? Bus,2,Not selected
+78,What is your main transport into work? Bus,99,Missing
+78,What is your main transport into work? Cycling,2,Not selected
+78,What is your main transport into work? Cycling,1,Cycling
+78,What is your main transport into work? Cycling,99,Missing
+78,What is your main transport into work? Walking,1,Walking
+78,What is your main transport into work? Walking,2,Not selected
+78,What is your main transport into work? Walking,99,Missing
+78,"What is your main transport into work? Wheeling (adapted bike, wheelchair, mobility scooter or similar)",1,"Wheeling (adapted bike, wheelchair, mobility scooter or similar)"
+78,"What is your main transport into work? Wheeling (adapted bike, wheelchair, mobility scooter or similar)",2,Not selected
+78,"What is your main transport into work? Wheeling (adapted bike, wheelchair, mobility scooter or similar)",99,Missing
+78,What is your main transport into work? Other,1,Other
+78,What is your main transport into work? Other,2,Not selected
+78,What is your main transport into work? Other,99,Missing
+79,"Thinking about your current role, how often, if at all, do you work at/from home?",1,Never
+79,"Thinking about your current role, how often, if at all, do you work at/from home?",2,Rarely
+79,"Thinking about your current role, how often, if at all, do you work at/from home?",3,Sometimes
+79,"Thinking about your current role, how often, if at all, do you work at/from home?",4,Often
+79,"Thinking about your current role, how often, if at all, do you work at/from home?",5,Always
+79,"Thinking about your current role, how often, if at all, do you work at/from home?",99,Missing
+80,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from managers?",1,Never
+80,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from managers?",2,01-Feb
+80,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from managers?",3,03-May
+80,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from managers?",4,06-Oct
+80,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from managers?",5,More than 10
+80,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from managers?",99,Missing
+81,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from patients / service users, their relatives or other members of the public?",1,Never
+81,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from patients / service users, their relatives or other members of the public?",2,01-Feb
+81,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from patients / service users, their relatives or other members of the public?",3,03-May
+81,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from patients / service users, their relatives or other members of the public?",4,06-Oct
+81,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from patients / service users, their relatives or other members of the public?",5,More than 10
+81,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from patients / service users, their relatives or other members of the public?",99,Missing
+82,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from other colleagues?",1,Never
+82,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from other colleagues?",2,01-Feb
+82,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from other colleagues?",3,03-May
+82,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from other colleagues?",4,06-Oct
+82,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from other colleagues?",5,More than 10
+82,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from other colleagues?",99,Missing
+83,I am confident that my organisation would address my concern.,1,Strongly disagree
+83,I am confident that my organisation would address my concern.,2,Disagree
+83,I am confident that my organisation would address my concern.,3,Neither agree nor disagree
+83,I am confident that my organisation would address my concern.,4,Agree
+83,I am confident that my organisation would address my concern.,5,Strongly agree
+83,I am confident that my organisation would address my concern.,99,Missing
+84,In my team disagreements are dealt with constructively.,1,Strongly disagree
+84,In my team disagreements are dealt with constructively.,2,Disagree
+84,In my team disagreements are dealt with constructively.,3,Neither agree nor disagree
+84,In my team disagreements are dealt with constructively.,4,Agree
+84,In my team disagreements are dealt with constructively.,5,Strongly agree
+84,In my team disagreements are dealt with constructively.,99,Missing
+85,Care of patients / service users is my organisation's top priority.,1,Strongly disagree
+85,Care of patients / service users is my organisation's top priority.,2,Disagree
+85,Care of patients / service users is my organisation's top priority.,3,Neither agree nor disagree
+85,Care of patients / service users is my organisation's top priority.,4,Agree
+85,Care of patients / service users is my organisation's top priority.,5,Strongly agree
+85,Care of patients / service users is my organisation's top priority.,99,Missing
+86,"As soon as I can find another job, I will leave this organisation.",1,Strongly disagree
+86,"As soon as I can find another job, I will leave this organisation.",2,Disagree
+86,"As soon as I can find another job, I will leave this organisation.",3,Neither agree nor disagree
+86,"As soon as I can find another job, I will leave this organisation.",4,Agree
+86,"As soon as I can find another job, I will leave this organisation.",5,Strongly agree
+86,"As soon as I can find another job, I will leave this organisation.",99,Missing
+87,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from staff / colleagues?",1,Never
+87,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from staff / colleagues?",2,01-Feb
+87,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from staff / colleagues?",3,03-May
+87,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from staff / colleagues?",4,06-Oct
+87,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from staff / colleagues?",5,More than 10
+87,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from staff / colleagues?",99,Missing
+88,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from patients / service users, their relatives or other members of the public?",1,Never
+88,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from patients / service users, their relatives or other members of the public?",2,01-Feb
+88,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from patients / service users, their relatives or other members of the public?",3,03-May
+88,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from patients / service users, their relatives or other members of the public?",4,06-Oct
+88,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from patients / service users, their relatives or other members of the public?",5,More than 10
+88,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from patients / service users, their relatives or other members of the public?",99,Missing
+89,There are enough staff at this organisation for me to do my job properly.,1,Strongly disagree
+89,There are enough staff at this organisation for me to do my job properly.,2,Disagree
+89,There are enough staff at this organisation for me to do my job properly.,3,Neither agree nor disagree
+89,There are enough staff at this organisation for me to do my job properly.,4,Agree
+89,There are enough staff at this organisation for me to do my job properly.,5,Strongly agree
+89,There are enough staff at this organisation for me to do my job properly.,99,Missing
+90,My organisation is committed to helping me balance my work and home life.,1,Strongly disagree
+90,My organisation is committed to helping me balance my work and home life.,2,Disagree
+90,My organisation is committed to helping me balance my work and home life.,3,Neither agree nor disagree
+90,My organisation is committed to helping me balance my work and home life.,4,Agree
+90,My organisation is committed to helping me balance my work and home life.,5,Strongly agree
+90,My organisation is committed to helping me balance my work and home life.,99,Missing
+91,"How often, if at all, do you feel worn out at the end of your working day/shift?",1,Never
+91,"How often, if at all, do you feel worn out at the end of your working day/shift?",2,Rarely
+91,"How often, if at all, do you feel worn out at the end of your working day/shift?",3,Sometimes
+91,"How often, if at all, do you feel worn out at the end of your working day/shift?",4,Often
+91,"How often, if at all, do you feel worn out at the end of your working day/shift?",5,Always
+91,"How often, if at all, do you feel worn out at the end of your working day/shift?",99,Missing
+92,Which of the following best describes you?,1,Female
+92,Which of the following best describes you?,2,Male
+92,Which of the following best describes you?,3,Non-binary
+92,Which of the following best describes you?,4,Prefer to self-describe
+92,Which of the following best describes you?,9,Prefer not to say
+92,Which of the following best describes you?,99,Missing
+93,Which of the following best describes how you think of yourself?,1,Heterosexual or Straight
+93,Which of the following best describes how you think of yourself?,2,Gay or Lesbian
+93,Which of the following best describes how you think of yourself?,3,Bisexual
+93,Which of the following best describes how you think of yourself?,4,Other
+93,Which of the following best describes how you think of yourself?,5,I would prefer not to say
+93,Which of the following best describes how you think of yourself?,99,Missing
+96,"Does your organisation act fairly with regard to career progression / promotion, regardless of e.g. age, disability, ethnic background, gender reassignment, religion, sex or sexual orientation?",1,Yes
+96,"Does your organisation act fairly with regard to career progression / promotion, regardless of e.g. age, disability, ethnic background, gender reassignment, religion, sex or sexual orientation?",2,No
+96,"Does your organisation act fairly with regard to career progression / promotion, regardless of e.g. age, disability, ethnic background, gender reassignment, religion, sex or sexual orientation?",9,Don't know
+96,"Does your organisation act fairly with regard to career progression / promotion, regardless of e.g. age, disability, ethnic background, gender reassignment, religion, sex or sexual orientation?",99,Missing
+97,What is your religion? Are you...,1,No religion
+97,What is your religion? Are you...,2,Christian
+97,What is your religion? Are you...,3,Buddhist
+97,What is your religion? Are you...,4,Hindu
+97,What is your religion? Are you...,5,Jewish
+97,What is your religion? Are you...,6,Muslim
+97,What is your religion? Are you...,7,Sikh
+97,What is your religion? Are you...,8,Any other religion
+97,What is your religion? Are you...,9,I would prefer not to say
+97,What is your religion? Are you...,99,Missing
+98,How many years have you worked for this organisation?,1,Less than 1 year
+98,How many years have you worked for this organisation?,2,1-2 years
+98,How many years have you worked for this organisation?,3,3-5 years
+98,How many years have you worked for this organisation?,4,6-10 years
+98,How many years have you worked for this organisation?,5,11-15 years
+98,How many years have you worked for this organisation?,6,More than 15 years
+98,How many years have you worked for this organisation?,99,Missing
+99,In the last 12 months how many times have you personally experienced physical violence at work from other colleagues?,1,Never
+99,In the last 12 months how many times have you personally experienced physical violence at work from other colleagues?,2,01-Feb
+99,In the last 12 months how many times have you personally experienced physical violence at work from other colleagues?,3,03-May
+99,In the last 12 months how many times have you personally experienced physical violence at work from other colleagues?,4,06-Oct
+99,In the last 12 months how many times have you personally experienced physical violence at work from other colleagues?,5,More than 10
+99,In the last 12 months how many times have you personally experienced physical violence at work from other colleagues?,99,Missing
+100,In the last 12 months how many times have you personally experienced physical violence at work from managers?,1,Never
+100,In the last 12 months how many times have you personally experienced physical violence at work from managers?,2,01-Feb
+100,In the last 12 months how many times have you personally experienced physical violence at work from managers?,3,03-May
+100,In the last 12 months how many times have you personally experienced physical violence at work from managers?,4,06-Oct
+100,In the last 12 months how many times have you personally experienced physical violence at work from managers?,5,More than 10
+100,In the last 12 months how many times have you personally experienced physical violence at work from managers?,99,Missing
+101,"In the last 12 months how many times have you personally experienced physical violence at work from patients / service users, their relatives or other members of the public?",1,Never
+101,"In the last 12 months how many times have you personally experienced physical violence at work from patients / service users, their relatives or other members of the public?",2,01-Feb
+101,"In the last 12 months how many times have you personally experienced physical violence at work from patients / service users, their relatives or other members of the public?",3,03-May
+101,"In the last 12 months how many times have you personally experienced physical violence at work from patients / service users, their relatives or other members of the public?",4,06-Oct
+101,"In the last 12 months how many times have you personally experienced physical violence at work from patients / service users, their relatives or other members of the public?",5,More than 10
+101,"In the last 12 months how many times have you personally experienced physical violence at work from patients / service users, their relatives or other members of the public?",99,Missing
+102,I am involved in deciding on changes introduced that affect my work area / team / department.,1,Strongly disagree
+102,I am involved in deciding on changes introduced that affect my work area / team / department.,2,Disagree
+102,I am involved in deciding on changes introduced that affect my work area / team / department.,3,Neither agree nor disagree
+102,I am involved in deciding on changes introduced that affect my work area / team / department.,4,Agree
+102,I am involved in deciding on changes introduced that affect my work area / team / department.,5,Strongly agree
+102,I am involved in deciding on changes introduced that affect my work area / team / department.,99,Missing
+103,My immediate manager encourages me at work.,1,Strongly disagree
+103,My immediate manager encourages me at work.,2,Disagree
+103,My immediate manager encourages me at work.,3,Neither agree nor disagree
+103,My immediate manager encourages me at work.,4,Agree
+103,My immediate manager encourages me at work.,5,Strongly agree
+103,My immediate manager encourages me at work.,99,Missing
+104,My immediate manager is interested in listening to me when I describe challenges I face.,1,Strongly disagree
+104,My immediate manager is interested in listening to me when I describe challenges I face.,2,Disagree
+104,My immediate manager is interested in listening to me when I describe challenges I face.,3,Neither agree nor disagree
+104,My immediate manager is interested in listening to me when I describe challenges I face.,4,Agree
+104,My immediate manager is interested in listening to me when I describe challenges I face.,5,Strongly agree
+104,My immediate manager is interested in listening to me when I describe challenges I face.,99,Missing
+105,The recognition I get for good work.,1,Very dissatisfied
+105,The recognition I get for good work.,2,Dissatisfied
+105,The recognition I get for good work.,3,Neither satisfied nor dissatisfied
+105,The recognition I get for good work.,4,Satisfied
+105,The recognition I get for good work.,5,Very satisfied
+105,The recognition I get for good work.,99,Missing
+106,It left me feeling that my work is valued by my organisation.,1,"Yes, definitely"
+106,It left me feeling that my work is valued by my organisation.,2,"Yes, to some extent"
+106,It left me feeling that my work is valued by my organisation.,3,No
+106,It left me feeling that my work is valued by my organisation.,99,Missing
+107,Have you felt pressure from your manager to come to work?,1,Yes
+107,Have you felt pressure from your manager to come to work?,2,No
+107,Have you felt pressure from your manager to come to work?,99,Missing
+108,What is your ethnic group?,1,English / Welsh / Scottish / Northern Irish / British
+108,What is your ethnic group?,2,Irish
+108,What is your ethnic group?,3,Gypsy or Irish Traveller
+108,What is your ethnic group?,4,Any other White background
+108,What is your ethnic group?,5,White and Black Caribbean
+108,What is your ethnic group?,6,White and Black African
+108,What is your ethnic group?,7,White and Asian
+108,What is your ethnic group?,8,Any other Mixed / Multiple ethnic background
+108,What is your ethnic group?,9,Indian
+108,What is your ethnic group?,10,Pakistani
+108,What is your ethnic group?,11,Bangladeshi
+108,What is your ethnic group?,12,Chinese
+108,What is your ethnic group?,14,Any other Asian background
+108,What is your ethnic group?,15,African
+108,What is your ethnic group?,16,Caribbean
+108,What is your ethnic group?,17,Any other Black / African / Caribbean background
+108,What is your ethnic group?,18,Arab
+108,What is your ethnic group?,19,Any other ethnic background
+108,What is your ethnic group?,99,Missing
+108,What is your ethnic group?,13,Filipino
+109,Which of the following do you identify as?,6,Cadet Force Adult Volunteer
+109,Which of the following do you identify as?,1,Veteran (served at least one day in the UK Armed Forces (Regular or Reserve))
+109,Which of the following do you identify as?,7,Other
+109,Which of the following do you identify as?,4,A family member of a person serving in the UK Armed Forces (Reserve)
+109,Which of the following do you identify as?,2,Reservist
+109,Which of the following do you identify as?,5,A family member of a veteran
+109,Which of the following do you identify as?,3,A family member of a person serving in the UK Armed Forces (Regular)
+109,Which of the following do you identify as?,99,Missing
+110,There are frequent opportunities for me to show initiative in my role.,1,Strongly disagree
+110,There are frequent opportunities for me to show initiative in my role.,2,Disagree
+110,There are frequent opportunities for me to show initiative in my role.,3,Neither agree nor disagree
+110,There are frequent opportunities for me to show initiative in my role.,4,Agree
+110,There are frequent opportunities for me to show initiative in my role.,5,Strongly agree
+110,There are frequent opportunities for me to show initiative in my role.,99,Missing
+111,I can approach my immediate manager to talk openly about flexible working.,1,Strongly disagree
+111,I can approach my immediate manager to talk openly about flexible working.,2,Disagree
+111,I can approach my immediate manager to talk openly about flexible working.,3,Neither agree nor disagree
+111,I can approach my immediate manager to talk openly about flexible working.,4,Agree
+111,I can approach my immediate manager to talk openly about flexible working.,5,Strongly agree
+111,I can approach my immediate manager to talk openly about flexible working.,99,Missing
+112,Do you have any physical or mental health conditions or illnesses lasting or expected to last for 12 months or more?,1,Yes
+112,Do you have any physical or mental health conditions or illnesses lasting or expected to last for 12 months or more?,2,No
+112,Do you have any physical or mental health conditions or illnesses lasting or expected to last for 12 months or more?,99,Missing
+113,I have opportunities to improve my knowledge and skills.,1,Strongly disagree
+113,I have opportunities to improve my knowledge and skills.,2,Disagree
+113,I have opportunities to improve my knowledge and skills.,3,Neither agree nor disagree
+113,I have opportunities to improve my knowledge and skills.,4,Agree
+113,I have opportunities to improve my knowledge and skills.,5,Strongly agree
+113,I have opportunities to improve my knowledge and skills.,99,Missing
+114,I am able to access the right learning and development opportunities when I need to.,1,Strongly disagree
+114,I am able to access the right learning and development opportunities when I need to.,2,Disagree
+114,I am able to access the right learning and development opportunities when I need to.,3,Neither agree nor disagree
+114,I am able to access the right learning and development opportunities when I need to.,4,Agree
+114,I am able to access the right learning and development opportunities when I need to.,5,Strongly agree
+114,I am able to access the right learning and development opportunities when I need to.,99,Missing
+115,The team I work in has a set of shared objectives.,1,Strongly disagree
+115,The team I work in has a set of shared objectives.,2,Disagree
+115,The team I work in has a set of shared objectives.,3,Neither agree nor disagree
+115,The team I work in has a set of shared objectives.,4,Agree
+115,The team I work in has a set of shared objectives.,5,Strongly agree
+115,The team I work in has a set of shared objectives.,99,Missing
+116,The team I work in often meets to discuss the team's effectiveness.,1,Strongly disagree
+116,The team I work in often meets to discuss the team's effectiveness.,2,Disagree
+116,The team I work in often meets to discuss the team's effectiveness.,3,Neither agree nor disagree
+116,The team I work in often meets to discuss the team's effectiveness.,4,Agree
+116,The team I work in often meets to discuss the team's effectiveness.,5,Strongly agree
+116,The team I work in often meets to discuss the team's effectiveness.,99,Missing
+117,My immediate manager values my work.,1,Strongly disagree
+117,My immediate manager values my work.,2,Disagree
+117,My immediate manager values my work.,3,Neither agree nor disagree
+117,My immediate manager values my work.,4,Agree
+117,My immediate manager values my work.,5,Strongly agree
+117,My immediate manager values my work.,99,Missing
+118,My immediate manager takes a positive interest in my health and well-being.,1,Strongly disagree
+118,My immediate manager takes a positive interest in my health and well-being.,2,Disagree
+118,My immediate manager takes a positive interest in my health and well-being.,3,Neither agree nor disagree
+118,My immediate manager takes a positive interest in my health and well-being.,4,Agree
+118,My immediate manager takes a positive interest in my health and well-being.,5,Strongly agree
+118,My immediate manager takes a positive interest in my health and well-being.,99,Missing
+119,My immediate manager takes effective action to help me with any problems I face.,1,Strongly disagree
+119,My immediate manager takes effective action to help me with any problems I face.,2,Disagree
+119,My immediate manager takes effective action to help me with any problems I face.,3,Neither agree nor disagree
+119,My immediate manager takes effective action to help me with any problems I face.,4,Agree
+119,My immediate manager takes effective action to help me with any problems I face.,5,Strongly agree
+119,My immediate manager takes effective action to help me with any problems I face.,99,Missing
+120,My immediate manager asks for my opinion before making decisions that affect my work.,1,Strongly disagree
+120,My immediate manager asks for my opinion before making decisions that affect my work.,2,Disagree
+120,My immediate manager asks for my opinion before making decisions that affect my work.,3,Neither agree nor disagree
+120,My immediate manager asks for my opinion before making decisions that affect my work.,4,Agree
+120,My immediate manager asks for my opinion before making decisions that affect my work.,5,Strongly agree
+120,My immediate manager asks for my opinion before making decisions that affect my work.,99,Missing
+121,My immediate manager works together with me to come to an understanding of problems.,1,Strongly disagree
+121,My immediate manager works together with me to come to an understanding of problems.,2,Disagree
+121,My immediate manager works together with me to come to an understanding of problems.,3,Neither agree nor disagree
+121,My immediate manager works together with me to come to an understanding of problems.,4,Agree
+121,My immediate manager works together with me to come to an understanding of problems.,5,Strongly agree
+121,My immediate manager works together with me to come to an understanding of problems.,99,Missing
+122,It helped me agree clear objectives for my work.,1,"Yes, definitely"
+122,It helped me agree clear objectives for my work.,2,"Yes, to some extent"
+122,It helped me agree clear objectives for my work.,3,No
+122,It helped me agree clear objectives for my work.,99,Missing
+123,Time passes quickly when I am working.,1,Never
+123,Time passes quickly when I am working.,2,Rarely
+123,Time passes quickly when I am working.,3,Sometimes
+123,Time passes quickly when I am working.,4,Often
+123,Time passes quickly when I am working.,5,Always
+123,Time passes quickly when I am working.,99,Missing
+124,Relationships at work are strained.,1,Never
+124,Relationships at work are strained.,2,Rarely
+124,Relationships at work are strained.,3,Sometimes
+124,Relationships at work are strained.,4,Often
+124,Relationships at work are strained.,5,Always
+124,Relationships at work are strained.,99,Missing
+125,"How often, if at all, do you find your work emotionally exhausting?",1,Never
+125,"How often, if at all, do you find your work emotionally exhausting?",2,Rarely
+125,"How often, if at all, do you find your work emotionally exhausting?",3,Sometimes
+125,"How often, if at all, do you find your work emotionally exhausting?",4,Often
+125,"How often, if at all, do you find your work emotionally exhausting?",5,Always
+125,"How often, if at all, do you find your work emotionally exhausting?",99,Missing
+126,"How often, if at all, do you feel burnt out because of your work?",1,Never
+126,"How often, if at all, do you feel burnt out because of your work?",2,Rarely
+126,"How often, if at all, do you feel burnt out because of your work?",3,Sometimes
+126,"How often, if at all, do you feel burnt out because of your work?",4,Often
+126,"How often, if at all, do you feel burnt out because of your work?",5,Always
+126,"How often, if at all, do you feel burnt out because of your work?",99,Missing
+127,"How often, if at all, do you feel that every working hour is tiring for you?",1,Never
+127,"How often, if at all, do you feel that every working hour is tiring for you?",2,Rarely
+127,"How often, if at all, do you feel that every working hour is tiring for you?",3,Sometimes
+127,"How often, if at all, do you feel that every working hour is tiring for you?",4,Often
+127,"How often, if at all, do you feel that every working hour is tiring for you?",5,Always
+127,"How often, if at all, do you feel that every working hour is tiring for you?",99,Missing
+128,"How often, if at all, do you not have enough energy for family and friends during leisure time?",1,Never
+128,"How often, if at all, do you not have enough energy for family and friends during leisure time?",2,Rarely
+128,"How often, if at all, do you not have enough energy for family and friends during leisure time?",3,Sometimes
+128,"How often, if at all, do you not have enough energy for family and friends during leisure time?",4,Often
+128,"How often, if at all, do you not have enough energy for family and friends during leisure time?",5,Always
+128,"How often, if at all, do you not have enough energy for family and friends during leisure time?",99,Missing
+129,The extent to which my organisation values my work.,1,Very dissatisfied
+129,The extent to which my organisation values my work.,2,Dissatisfied
+129,The extent to which my organisation values my work.,3,Neither satisfied nor dissatisfied
+129,The extent to which my organisation values my work.,4,Satisfied
+129,The extent to which my organisation values my work.,5,Very satisfied
+129,The extent to which my organisation values my work.,99,Missing
+130,During the last 12 months have you felt unwell as a result of work related stress?,1,Yes
+130,During the last 12 months have you felt unwell as a result of work related stress?,2,No
+130,During the last 12 months have you felt unwell as a result of work related stress?,99,Missing
+131,In the last 12 months have you personally experienced discrimination at work from a manager / team leader or other colleagues?,1,Yes
+131,In the last 12 months have you personally experienced discrimination at work from a manager / team leader or other colleagues?,2,No
+131,In the last 12 months have you personally experienced discrimination at work from a manager / team leader or other colleagues?,99,Missing
+132,"In the last 12 months have you personally experienced discrimination at work from patients / service users, their relatives or other members of the public?",1,Yes
+132,"In the last 12 months have you personally experienced discrimination at work from patients / service users, their relatives or other members of the public?",2,No
+132,"In the last 12 months have you personally experienced discrimination at work from patients / service users, their relatives or other members of the public?",99,Missing
+133,"Do you have any children aged from 0 to 17 living at home with you, or who you have regular caring responsibility for?",1,Yes
+133,"Do you have any children aged from 0 to 17 living at home with you, or who you have regular caring responsibility for?",2,No
+133,"Do you have any children aged from 0 to 17 living at home with you, or who you have regular caring responsibility for?",99,Missing
+134,"To what extent do you agree that the Trust actively considers the environment, such as improving resource efficiency, reducing carbon emissions and reducing waste?",3,Disagree to some extent
+134,"To what extent do you agree that the Trust actively considers the environment, such as improving resource efficiency, reducing carbon emissions and reducing waste?",1,Strongly agree
+134,"To what extent do you agree that the Trust actively considers the environment, such as improving resource efficiency, reducing carbon emissions and reducing waste?",9,Don't know
+134,"To what extent do you agree that the Trust actively considers the environment, such as improving resource efficiency, reducing carbon emissions and reducing waste?",4,Strongly disagree
+134,"To what extent do you agree that the Trust actively considers the environment, such as improving resource efficiency, reducing carbon emissions and reducing waste?",2,Agree to some extent
+134,"To what extent do you agree that the Trust actively considers the environment, such as improving resource efficiency, reducing carbon emissions and reducing waste?",99,Missing
+135,Are you satisfied with the Armed Forces specific support and guidance offered by the Trust?,4,Strongly disagree
+135,Are you satisfied with the Armed Forces specific support and guidance offered by the Trust?,3,Disagree to some extent
+135,Are you satisfied with the Armed Forces specific support and guidance offered by the Trust?,1,Strongly agree
+135,Are you satisfied with the Armed Forces specific support and guidance offered by the Trust?,2,Agree to some extent
+135,Are you satisfied with the Armed Forces specific support and guidance offered by the Trust?,9,Don't know
+135,Are you satisfied with the Armed Forces specific support and guidance offered by the Trust?,99,Missing
+136,"Have you, or anyone in your immediate family, ever served in the UK Armed Forces?",2,No
+136,"Have you, or anyone in your immediate family, ever served in the UK Armed Forces?",1,Yes
+136,"Have you, or anyone in your immediate family, ever served in the UK Armed Forces?",99,Missing
+137,What is your occupational group?,1,Occupational Therapy
+137,What is your occupational group?,2,Physiotherapy
+137,What is your occupational group?,3,Radiography
+137,What is your occupational group?,4,Pharmacy
+137,What is your occupational group?,5,Clinical Psychology
+137,What is your occupational group?,6,Psychotherapy
+137,What is your occupational group?,7,Operating Department Practitioner
+137,What is your occupational group?,8,Speech and Language Therapy
+137,What is your occupational group?,9,"Other qualified Allied Health Professionals (e.g. dietetics, podiatry, osteopathy)"
+137,What is your occupational group?,10,"Support to Allied Health Professionals (e.g. support worker, therapy helper, therapy assistant)"
+137,What is your occupational group?,11,"Other qualified Scientific and Technical or Healthcare Scientists (e.g. haematology, clinical biochemistry, microbiology)"
+137,What is your occupational group?,12,"Support to healthcare scientists (e.g. technicians, assistants or students)"
+137,What is your occupational group?,13,Medical / Dental - Consultant
+137,What is your occupational group?,14,"Medical / Dental - In Training (e.g. Foundation Y1, Foundation Y2, Core Trainees, Specialty Trainees (including GPs))"
+137,What is your occupational group?,15,"Medical / Dental - SAS doctor (Specialty Doctor, Specialist, Staff Grade or Associate Specialist)"
+137,What is your occupational group?,16,"Medical / Dental - Other (e.g. Locally Employed Doctor, Trust Grade Doctor, Clinical Fellow, etc)"
+137,What is your occupational group?,17,Salaried Primary Care Dentists
+137,What is your occupational group?,18,Emergency Care Practitioner
+137,What is your occupational group?,19,Paramedic
+137,What is your occupational group?,20,Emergency Care Assistant
+137,What is your occupational group?,22,"Ambulance Control Staff (e.g. call handler, dispatchers, PTS controllers)"
+137,What is your occupational group?,23,"Patient Transport Service (e.g. ambulance drivers, support staff)"
+137,What is your occupational group?,24,Public Health / Health Improvement
+137,What is your occupational group?,25,Commissioning managers / support staff
+137,What is your occupational group?,26,Adult / General
+137,What is your occupational group?,27,Mental health
+137,What is your occupational group?,28,Learning disabilities
+137,What is your occupational group?,29,Children
+137,What is your occupational group?,30,Midwives
+137,What is your occupational group?,31,Health Visitors
+137,What is your occupational group?,32,District / Community
+137,What is your occupational group?,33,Other Registered Nurses
+137,What is your occupational group?,34,Nursing auxiliary / Nursing assistant / Healthcare assistant (including Health / Clinical / Nursing Support Worker)
+137,What is your occupational group?,35,Social workers
+137,What is your occupational group?,36,Social care managers
+137,What is your occupational group?,37,Social care support staff
+137,What is your occupational group?,38,Admin & Clerical (including Medical Secretary)
+137,What is your occupational group?,39,"Central Functions / Corporate Services (e.g. HR, Finance, Information Systems, Information Technology)"
+137,What is your occupational group?,40,"Maintenance / Ancillary (e.g. housekeeping, domestic staff, maintenance, facilities, estates)"
+137,What is your occupational group?,41,General Management
+137,What is your occupational group?,42,Other occupational group
+137,What is your occupational group?,99,Missing
+137,What is your occupational group?,21,Ambulance Technician
+138,"Do you have face-to-face, video or telephone contact with patients / service users as part of your job?",1,"Yes, frequently"
+138,"Do you have face-to-face, video or telephone contact with patients / service users as part of your job?",2,"Yes, occasionally"
+138,"Do you have face-to-face, video or telephone contact with patients / service users as part of your job?",3,No
+138,"Do you have face-to-face, video or telephone contact with patients / service users as part of your job?",99,Missing
+139,How often do you work from home?,5,2 - 4 times a week
+139,How often do you work from home?,6,Daily
+139,How often do you work from home?,2,Less than once a fortnight
+139,How often do you work from home?,4,Once a week
+139,How often do you work from home?,3,Once a fortnight
+139,How often do you work from home?,1,Never
+139,How often do you work from home?,99,Missing
+140,How important is it for the Trust to take action on climate change?,9,Don't know
+140,How important is it for the Trust to take action on climate change?,1,Very important
+140,How important is it for the Trust to take action on climate change?,3,Quite unimportant
+140,How important is it for the Trust to take action on climate change?,2,Quite important
+140,How important is it for the Trust to take action on climate change?,4,Very unimportant
+140,How important is it for the Trust to take action on climate change?,99,Missing
+141,Age:,1,16-20
+141,Age:,2,21-30
+141,Age:,3,31-40
+141,Age:,4,41-50
+141,Age:,5,51-65
+141,Age:,6,66+
+141,Age:,99,Missing
+142,How much do you feel able to impact sustainability within your team or service?,4,"Slightly (some small, individual actions, but limited overall impact)"
+142,How much do you feel able to impact sustainability within your team or service?,1,Greatly (high degree of influence and impact on sustainability efforts)
+142,How much do you feel able to impact sustainability within your team or service?,3,Moderately (able to influence some changes within the team or service)
+142,How much do you feel able to impact sustainability within your team or service?,2,"Significantly (able to make noticeable, positive changes related to sustainability)"
+142,How much do you feel able to impact sustainability within your team or service?,5,Not at all (little to no perceived impact on sustainability)
+142,How much do you feel able to impact sustainability within your team or service?,99,Missing
