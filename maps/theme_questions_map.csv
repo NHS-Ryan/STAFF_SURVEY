@@ -1,0 +1,256 @@
+theme_id,theme,domain,subdomain,q_id,q_text
+OV_WL_WL,Oxleas Values,We Listen,We listen,1,"In the last 12 months, have you had an appraisal, annual review, development review, or Knowledge and Skills Framework (KSF) development review (Yes)."
+NI_IPC,NHS IMPACT,Investing in People & Culture,,2, I feel supported to develop my potential
+OV_WC_WA,Oxleas Values,We Care ,We Aim,2,I feel supported to develop my potential (Agree/Strongly agree).
+PP5_1,People's Promise,We are always learning,Development,2,I feel supported to develop my potential (Agree/Strongly agree).
+OV_WC_WA,Oxleas Values,We Care ,We Aim,4,I am able to access clinical supervision opportunities when I need to (Agree/Strongly agree).
+PS_WS,Patient Safety,Creating a workplace conducive to safety,,4,I am able to access clinical supervision opportunities when I need to.
+OV_WL_WA,Oxleas Values,We Listen,We Aim,5,I am trusted to do my job (Agree/Strongly agree).
+PP3_1,People's Promise,We each have a voice that counts,Autonomy and control,5,I am trusted to do my job (Agree/Strongly agree).
+OV_WL_WL,Oxleas Values,We Listen,We listen,6,I feel valued by my team (Agree/Strongly agree) .
+PP1_4,People's Promise,We are compassionate and inclusive,Inclusion,6,I feel valued by my team (Agree/Strongly agree).
+PS_RS,Patient Safety,Raising Concerns,,7,"% of staff saying they have seen any errors, near misses, or incidents that could have hurt staff and/or patients/service users in the last month"
+NI_BIC,NHS IMPACT,Building Improvement Capability & Capacity,,8, I am able to make suggestions to improve the work of my team/department
+E_2,Other,Engagement,Involvement,8, I am able to make suggestions to improve the work of my team/department
+OV_WL_WL,Oxleas Values,We Listen,We listen,8,I am able to make suggestions to improve the work of my team / department (Agree/Strongly agree).
+PP3_1,People's Promise,We each have a voice that counts,Autonomy and control,8,I am able to make suggestions to improve the work of my team / department (Agree/Strongly agree).
+OV_WK_WWN,Oxleas Values,We Care ,We will not ,9,"How often, if at all, are you exhausted at the thought of another day/shift at work (Never/Rarely)."
+PP4_2,People's Promise,We are safe and healthy,Burnout,9,"How often, if at all, are you exhausted at the thought of another day/shift at work (Never/Rarely)."
+NI_SPV,NHS IMPACT,Shared Purpose & Vision,,10, I look forward to coming to work
+E_1,Other,Engagement,Motivation,10, I look forward to coming to work
+OV_WL_WA,Oxleas Values,We Listen,We Aim,10,I look forward to going to work (Often/Always).
+M_3,Other,Morale,Stressors,11,I have unrealistic time pressures (Never/Rarely) .
+OV_WL_WL,Oxleas Values,We Listen,We listen,11,I have unrealistic time pressures (Never/Rarely) .
+PS_WS,Patient Safety,Creating a workplace conducive to safety,,11,I have unrealistic time pressures
+PP4_1,People's Promise,We are safe and healthy,Health and safety climate,11,I have unrealistic time pressures (Never/Rarely).
+OV_WC_WA,Oxleas Values,We Care ,We Aim,12,I achieve a good balance between my work life and my home life (Agree/Strongly agree).
+PP6_1,People's Promise,We work flexibly,Support for work-life balance,12,I achieve a good balance between my work life and my home life (Agree/Strongly agree).
+NI_BIC,NHS IMPACT,Building Improvement Capability & Capacity,,13, I am able to make improvements happen in my area of work
+E_2,Other,Engagement,Involvement,13, I am able to make improvements happen in my area of work
+OV_WL_WL,Oxleas Values,We Listen,We listen,13,I am able to make improvements happen in my area of work (Agree/Strongly agree) .
+PP3_1,People's Promise,We each have a voice that counts,Autonomy and control,13,I am able to make improvements happen in my area of work (Agree/Strongly agree).
+OV_WF_WA,Oxleas Values,We are Fair ,We Aim,14,"I think that my organisation respects individual differences (e.g. cultures, working styles, backgrounds, ideas, etc) (Agree/Strongly agree)."
+PP1_3,People's Promise,We are compassionate and inclusive,Diversity and equality,14,"I think that my organisation respects individual differences (e.g. cultures, working styles, backgrounds, ideas, etc) (Agree/Strongly agree)."
+NI_SPV,NHS IMPACT,Shared Purpose & Vision,,16, I would recommend my organisation as a place to work
+E_3,Other,Engagement,Advocacy,16, I would recommend my organisation as a place to work
+OV_WC_WL,Oxleas Values,We Care ,We listen,16,I would recommend my organisation as a place to work (Agree/Strongly agree).
+PP1_1,People's Promise,We are compassionate and inclusive,Compassionate culture,16,I would recommend my organisation as a place to work (Agree/Strongly agree).
+OV_WL_WL,Oxleas Values,We Listen,We listen,18,My level of pay (Satisfied/Very satisfied) .
+PP2,People's Promise,We are recognised and rewarded,,18,My level of pay (Satisfied/Very satisfied).
+M_2,Other,Morale,Work pressure,19,I am able to meet all the conflicting demands on my time at work
+OV_WL_WL,Oxleas Values,We Listen,We listen,19,I am able to meet all the conflicting demands on my time at work (Agree/Strongly agree).
+PS_WS,Patient Safety,Creating a workplace conducive to safety,,19,I am able to meet all the conflicting demands on my time at work
+PP4_1,People's Promise,We are safe and healthy,Health and safety climate,19,I am able to meet all the conflicting demands on my time at work (Agree/Strongly agree).
+M_1,Other,Morale,Thinking about leaving,20,I will probably look for a job at a new organisation in the next 12 months (Strongly disagree/Disagree).
+OV_WK_WWN,Oxleas Values,We Listen,We will not ,20,I will probably look for a job at a new organisation in the next 12 months (Strongly disagree/Disagree).
+NI_UQM,NHS IMPACT,Using Quality Management System,,21," If I spoke up about something that concerned me, I am confident my organisation would address my concern"
+OV_WC_WL,Oxleas Values,We Care ,We listen,21,If I spoke up about something that concerned me I am confident my organisation would address my concern (Agree/Strongly agree).
+PS_RS,Patient Safety,Raising Concerns,,21,If I spoke up about something that concerned me I am confident my organisation would address my concern
+PP3_2,People's Promise,We each have a voice that counts,Raising concerns,21,If I spoke up about something that concerned me I am confident my organisation would address my concern (Agree/Strongly agree).
+OV_WL_WL,Oxleas Values,We Listen,We listen,22,I enjoy working with the colleagues in my team (Agree/Strongly agree).
+PP7_1,People's Promise,We are a team,Team working,22,I enjoy working with the colleagues in my team (Agree/Strongly agree).
+OV_WL_WL,Oxleas Values,We Listen,We listen,23,I can eat nutritious and affordable food while I am working (Often/Always) .
+M_3,Other,Morale,Stressors,24,I receive the respect I deserve from my colleagues at work (Agree/Strongly agree) .
+OV_WL_WL,Oxleas Values,We Listen,We listen,24,I receive the respect I deserve from my colleagues at work (Agree/Strongly agree) .
+PP7_1,People's Promise,We are a team,Team working,24,I receive the respect I deserve from my colleagues at work (Agree/Strongly agree).
+OV_WC_WA,Oxleas Values,We Care ,We Aim,25,My organisation takes positive action on health and well-being (Agree/Strongly agree).
+PP4_1,People's Promise,We are safe and healthy,Health and safety climate,25,My organisation takes positive action on health and well-being (Agree/Strongly agree).
+NI_DLB,NHS IMPACT,Development of Leadership Behaviours,,26, … gives me clear feedback on my work
+OV_WK_WA,Oxleas Values,We are Kind,We Aim,26,My immediate manager gives me clear feedback on my work (Agree/Strongly agree) .
+PP7_2,People's Promise,We are a team,Line management,26,My immediate manager gives me clear feedback on my work (Agree/Strongly agree).
+OV_WF_WL,Oxleas Values,We are Fair ,We listen,27,I would feel secure raising concerns about unsafe clinical practice (Agree/Strongly agree) .
+PS_RS,Patient Safety,Raising Concerns,,27,I would feel secure raising concerns about unsafe clinical practice
+PP3_2,People's Promise,We each have a voice that counts,Raising concerns,27,I would feel secure raising concerns about unsafe clinical practice (Agree/Strongly agree).
+M_2,Other,Morale,Work pressure,28,"I have adequate materials, supplies and equipment to do my work"
+OV_WL_WL,Oxleas Values,We Listen,We listen,28,"I have adequate materials, supplies and equipment to do my work (Agree/Strongly agree)."
+PS_WS,Patient Safety,Creating a workplace conducive to safety,,28,"I have adequate materials, supplies and equipment to do my work"
+PP4_1,People's Promise,We are safe and healthy,Health and safety climate,28,"I have adequate materials, supplies and equipment to do my work (Agree/Strongly agree)."
+OV_WK_WWN,Oxleas Values,We Care ,We will not ,29,"How often, if at all, does your work frustrate you (Never/Rarely) 49."
+PP4_2,People's Promise,We are safe and healthy,Burnout,29,"How often, if at all, does your work frustrate you (Never/Rarely)."
+OV_WL_WL,Oxleas Values,We Listen,We listen,30,"It helped me to improve how I do my job (Yes, definitely) ."
+PP5_2,People's Promise,We are always learning,Appraisals,30,"It helped me to improve how I do my job (Yes, definitely)."
+NI_SPV,NHS IMPACT,Shared Purpose & Vision,,31, I am enthusiastic about my job
+E_1,Other,Engagement,Motivation,31, I am enthusiastic about my job
+OV_WL_WA,Oxleas Values,We Listen,We Aim,31,I am enthusiastic about my job (Often/Always).
+OV_WK_WWN,Oxleas Values,We are Fair ,We will not ,32,On what grounds have you experienced discrimination? Sexual orientation.
+OV_WK_WWN,Oxleas Values,We are Fair ,We will not ,34,On what grounds have you experienced discrimination? Religion.
+OV_WK_WWN,Oxleas Values,We are Fair ,We will not ,35,On what grounds have you experienced discrimination? Ethnic background (No) .
+OV_WK_WWN,Oxleas Values,We are Fair ,We will not ,37,On what grounds have you experienced discrimination? Other (No).
+OV_WK_WWN,Oxleas Values,We are Fair ,We will not ,39,On what grounds have you experienced discrimination? Gender. 
+OV_WK_WWN,Oxleas Values,We are Fair ,We will not ,40,On what grounds have you experienced discrimination? Disability.
+OV_WK_WWN,Oxleas Values,We are Fair ,We will not ,41,On what grounds have you experienced discrimination? Age (No).
+NI_BIC,NHS IMPACT,Building Improvement Capability & Capacity,,42, I have a choice in deciding how to do my work
+M_3,Other,Morale,Stressors,42, I have a choice in deciding how to do my work
+OV_WL_WL,Oxleas Values,We Listen,We listen,42,I have a choice in deciding how to do my work (Often/Always) .
+PP3_1,People's Promise,We each have a voice that counts,Autonomy and control,42,I have a choice in deciding how to do my work (Often/Always).
+OV_WK_WWN,Oxleas Values,We Care ,We will not ,43,In the last 12 months have you experienced musculoskeletal problems (MSK) as a result of work activities (No).
+PP4_3,People's Promise,We are safe and healthy,Negative experiences,43,In the last 12 months have you experienced musculoskeletal problems (MSK) as a result of work activities (No).
+OV_WK_WWN,Oxleas Values,We Care ,We will not ,44,In the last three months have you ever come to work despite not feeling well enough to perform your duties (No).
+PS_WS,Patient Safety,Creating a workplace conducive to safety,,44,Whether attended work despite not feeling well enough in the last three months
+PP4_3,People's Promise,We are safe and healthy,Negative experiences,44,In the last three months have you ever come to work despite not feeling well enough to perform your duties (No).
+E_3,Other,Engagement,Advocacy,45,If a friend or relative needed treatment I would be happy with the standard of care provided by this organisation (Agree/Strongly agree).
+OV_WC_WL,Oxleas Values,We Care ,We listen,45,If a friend or relative needed treatment I would be happy with the standard of care provided by this organisation (Agree/Strongly agree).
+PP1_1,People's Promise,We are compassionate and inclusive,Compassionate culture,45,If a friend or relative needed treatment I would be happy with the standard of care provided by this organisation (Agree/Strongly agree).
+OV_WL_WL,Oxleas Values,We Listen,We listen,47,I feel a strong personal attachment to my team (Agree/Strongly agree) .
+PP1_4,People's Promise,We are compassionate and inclusive,Inclusion,47,I feel a strong personal attachment to my team (Agree/Strongly agree).
+NI_DLB,NHS IMPACT,Development of Leadership Behaviours,,53, … cares about my concerns
+OV_WK_WL,Oxleas Values,We are Kind,We listen,53,My immediate manager cares about my concerns (Agree/Strongly agree) 
+PP1_2,People's Promise,We are compassionate and inclusive,Compassionate leadership,53,My immediate manager cares about my concerns (Agree/Strongly agree).
+OV_WK_WL,Oxleas Values,We are Kind,We listen,54,The people I work with show appreciation to one another (Agree/Strongly agree) .
+PP2,People's Promise,We are recognised and rewarded,,54,The people I work with show appreciation to one another (Agree/Strongly agree).
+OV_WL_WL,Oxleas Values,We Listen,We listen,55,The opportunities for flexible working patterns (Satisfied/Very satisfied) .
+PP6_2,People's Promise,We work flexibly,Flexible working,55,The opportunities for flexible working patterns (Satisfied/Very satisfied).
+OV_WF_WL,Oxleas Values,We are Fair ,We listen,56,"My organisation treats staff who are involved in an error, near miss or incident fairly (Agree/Strongly agree)."
+PS_RS,Patient Safety,Raising Concerns,,56,"My organisation treats staff who are involved in an error, near miss or incident fairly."
+OV_WF_WL,Oxleas Values,We are Fair ,We listen,57,"We are given feedback about changes made in response to reported errors, near misses and incidents (Agree/Strongly agree)."
+PS_RS,Patient Safety,Raising Concerns,,57,"We are given feedback about changes made in response to reported errors, near misses and incidents."
+NI_IPC,NHS IMPACT,Investing in People & Culture,,58, There are opportunities for me to develop my career in this organisation
+OV_WL_WL,Oxleas Values,We Listen,We listen,58,There are opportunities for me to develop my career in this organisation (Agree/Strongly agree).
+PP5_1,People's Promise,We are always learning,Development,58,There are opportunities for me to develop my career in this organisation (Agree/Strongly agree).
+NI_UQM,NHS IMPACT,Using Quality Management System,,59, My organisation acts on concerns raised by patients/service users
+OV_WC_WL,Oxleas Values,We Care ,We listen,59,My organisation acts on concerns raised by patients / service users (Agree/Strongly agree).
+PS_RS,Patient Safety,Raising Concerns,,59,My organisation acts on concerns raised by patients / service users
+PP1_1,People's Promise,We are compassionate and inclusive,Compassionate culture,59,My organisation acts on concerns raised by patients / service users (Agree/Strongly agree).
+M_1,Other,Morale,Thinking about leaving,60,I often think about leaving this organisation (Strongly disagree/Disagree).
+OV_WK_WWN,Oxleas Values,We Listen,We will not ,60,I often think about leaving this organisation (Strongly disagree/Disagree).
+OV_WK_WA,Oxleas Values,We are Kind,We Aim,62,The people I work with are polite and treat each other with respect (Agree/Strongly agree) .
+PP1_4,People's Promise,We are compassionate and inclusive,Inclusion,62,The people I work with are polite and treat each other with respect (Agree/Strongly agree).
+PS_PS,Patient Safety,Personal Safety,,63,"Whether experiences of harassment, bullying or abuse were reported"
+PP4_1,People's Promise,We are safe and healthy,Health and safety climate,63,"The last time you experienced harassment, bullying or abuse at work, did you or a colleague report it (Yes)."
+PS_PS,Patient Safety,Personal Safety,,64,Whether experiences of physical violence were reported
+PP4_1,People's Promise,We are safe and healthy,Health and safety climate,64,"The last time you experienced physical violence at work, did you or a colleague report it (Yes)."
+NI_BIC,NHS IMPACT,Building Improvement Capability & Capacity,,65, Team members understand each other's roles
+OV_WL_WL,Oxleas Values,We Listen,We listen,65,Team members understand each other's roles (Agree/Strongly agree) .
+PP7_1,People's Promise,We are a team,Team working,65,Team members understand each other's roles (Agree/Strongly agree).
+NI_UQM,NHS IMPACT,Using Quality Management System,,66, I feel safe to speak up about anything that concerns me in this organisation
+OV_WC_WL,Oxleas Values,We Care ,We listen,66,I feel safe to speak up about anything that concerns me in this organisation (Agree/Strongly agree).
+PS_RS,Patient Safety,Raising Concerns,,66,I feel safe to speak up about anything that concerns me in this organisation
+PP3_2,People's Promise,We each have a voice that counts,Raising concerns,66,I feel safe to speak up about anything that concerns me in this organisation (Agree/Strongly agree).
+OV_WF_WL,Oxleas Values,We are Fair ,We listen,67,"My organisation encourages us to report errors, near misses or incidents (Agree/Strongly agree)."
+PS_RS,Patient Safety,Raising Concerns,,67,"My organisation encourages us to report errors, near misses or incidents."
+NI_UQM,NHS IMPACT,Using Quality Management System,,68, I feel that my role makes a difference to patients/service users
+OV_WL_WL,Oxleas Values,We Listen,We listen,68,I feel that my role makes a difference to patients / service users (Agree/Strongly agree) .
+PP1_1,People's Promise,We are compassionate and inclusive,Compassionate culture,68,I feel that my role makes a difference to patients / service users (Agree/Strongly agree).
+M_3,Other,Morale,Stressors,69,I always know what my work responsibilities are (Agree/Strongly agree).
+OV_WL_WA,Oxleas Values,We Listen,We Aim,69,I always know what my work responsibilities are (Agree/Strongly agree).
+PS_WS,Patient Safety,Creating a workplace conducive to safety,,69,I always know what my work responsibilities are
+PP3_1,People's Promise,We each have a voice that counts,Autonomy and control,69,I always know what my work responsibilities are (Agree/Strongly agree).
+OV_WK_WL,Oxleas Values,We are Kind,We listen,70,The people I work with are understanding and kind to one another (Agree/Strongly agree).
+PP1_4,People's Promise,We are compassionate and inclusive,Inclusion,70,The people I work with are understanding and kind to one another (Agree/Strongly agree).
+OV_WF_WL,Oxleas Values,We are Fair ,We listen,71,"When errors, near misses or incidents are reported, my organisation takes action to ensure that they do not happen again (Agree/Strongly agree)."
+PS_RS,Patient Safety,Raising Concerns,,71,"When errors, near misses or incidents are reported, my organisation takes action to ensure that they do not happen again."
+NI_IPC,NHS IMPACT,Investing in People & Culture,,73, This organisation offers me challenging work
+OV_WL_WL,Oxleas Values,We Listen,We listen,73,This organisation offers me challenging work (Agree/Strongly agree).
+PP5_1,People's Promise,We are always learning,Development,73,This organisation offers me challenging work (Agree/Strongly agree).
+OV_WL_WL,Oxleas Values,We Listen,We listen,76,My team has enough freedom in how to do its work (Agree/Strongly agree).
+PP7_1,People's Promise,We are a team,Team working,76,My team has enough freedom in how to do its work (Agree/Strongly agree).
+NI_SPV,NHS IMPACT,Shared Purpose & Vision,,77, Teams within this organisation work well together to achieve their objectives
+OV_WL_WL,Oxleas Values,We Listen,We listen,77,Teams within this organisation work well together to achieve their objectives (Agree/Strongly agree).
+PP7_1,People's Promise,We are a team,Team working,77,Teams within this organisation work well together to achieve their objectives (Agree/Strongly agree).
+PS_PS,Patient Safety,Personal Safety,,80,"Experience of harassment, bullying or abuse in the last 12 months… managers"
+PP4_3,People's Promise,We are safe and healthy,Negative experiences,80,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from managers (Never)."
+PS_PS,Patient Safety,Personal Safety,,81,"Experience of harassment, bullying or abuse in the last 12 months from… patients / service users, their relatives or other members of the public"
+PS_PS,Patient Safety,Personal Safety,,82,"Experience of harassment, bullying or abuse in the last 12 months… other colleagues"
+PP4_3,People's Promise,We are safe and healthy,Negative experiences,82,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from other colleagues (Never)."
+OV_WF_WL,Oxleas Values,We are Fair ,We listen,83,I am confident that my organisation would address my concern (Agree/Strongly agree).
+PS_RS,Patient Safety,Raising Concerns,,83,I am confident that my organisation would address my concern
+PP3_2,People's Promise,We each have a voice that counts,Raising concerns,83,I am confident that my organisation would address my concern (Agree/Strongly agree).
+OV_WL_WL,Oxleas Values,We Listen,We listen,84,In my team disagreements are dealt with constructively (Agree/Strongly agree) .
+PP7_1,People's Promise,We are a team,Team working,84,In my team disagreements are dealt with constructively (Agree/Strongly agree).
+NI_SPV,NHS IMPACT,Shared Purpose & Vision,,85, Care of patients/service users is my organisations top priority
+E_3,Other,Engagement,Advocacy,85, Care of patients/service users is my organisations top priority
+OV_WC_WL,Oxleas Values,We Care ,We listen,85,Care of patients / service users is my organisation's top priority (Agree/Strongly agree).
+PS_WS,Patient Safety,Creating a workplace conducive to safety,,85,Care of patients / service users is my organisation's top priority
+PP1_1,People's Promise,We are compassionate and inclusive,Compassionate culture,85,Care of patients / service users is my organisation's top priority (Agree/Strongly agree).
+M_1,Other,Morale,Thinking about leaving,86,"As soon as I can find another job, I will leave this organisation (Strongly disagree/Disagree)."
+OV_WK_WWN,Oxleas Values,We Listen,We will not ,86,"As soon as I can find another job, I will leave this organisation (Strongly disagree/Disagree)."
+PS_PS,Patient Safety,Personal Safety,,87,Experience of unwanted behaviour of a sexual nature at work in the last 12 months…  from staff / colleagues
+PS_PS,Patient Safety,Personal Safety,,88,"Experience of unwanted behaviour of a sexual nature at work in the last 12 months… from patients / service users, their relatives or other members of the public"
+M_2,Other,Morale,Work pressure,89,There are enough staff at this organisation for me to do my job properly
+OV_WL_WL,Oxleas Values,We Listen,We listen,89,There are enough staff at this organisation for me to do my job properly (Agree/Strongly agree).
+PS_WS,Patient Safety,Creating a workplace conducive to safety,,89,There are enough staff at this organisation for me to do my job properly
+PP4_1,People's Promise,We are safe and healthy,Health and safety climate,89,There are enough staff at this organisation for me to do my job properly (Agree/Strongly agree).
+OV_WL_WL,Oxleas Values,We Listen,We listen,90,My organisation is committed to helping me balance my work and home life (Agree/Strongly agree).
+PP6_1,People's Promise,We work flexibly,Support for work-life balance,90,My organisation is committed to helping me balance my work and home life (Agree/Strongly agree).
+OV_WK_WWN,Oxleas Values,We Care ,We will not ,91,"How often, if at all, do you feel worn out at the end of your working day/shift (Never/Rarely)."
+PP4_2,People's Promise,We are safe and healthy,Burnout,91,"How often, if at all, do you feel worn out at the end of your working day/shift (Never/Rarely)."
+OV_WF_WL,Oxleas Values,We are Fair ,We listen,96,"My organisation acts fairly with regard to career progression / promotion, regardless of ethnic background, gender, religion, sexual orientation, disability or age (Yes)."
+PP1_3,People's Promise,We are compassionate and inclusive,Diversity and equality,96,"Does your organisation act fairly with regard to career progression / promotion, regardless of ethnic background, gender, religion, sexual orientation, disability or age (Yes)."
+PS_PS,Patient Safety,Personal Safety,,99,In the last 12 months how many times have you personally experienced physical violence at work from other colleagues?
+PP4_3,People's Promise,We are safe and healthy,Negative experiences,99,In the last 12 months how many times have you personally experienced physical violence at work from other colleagues (Never).
+PS_PS,Patient Safety,Personal Safety,,100,In the last 12 months how many times have you personally experienced physical violence at work from managers?
+PP4_3,People's Promise,We are safe and healthy,Negative experiences,100,In the last 12 months how many times have you personally experienced physical violence at work from managers (Never).
+NI_BIC,NHS IMPACT,Building Improvement Capability & Capacity,,102, I am involved in deciding on changes introduced that affect my work area
+M_3,Other,Morale,Stressors,102, I am involved in deciding on changes introduced that affect my work area
+OV_WL_WL,Oxleas Values,We Listen,We listen,102,I am involved in deciding on changes introduced that affect my work area / team / department (Agree/Strongly agree) .
+PP3_1,People's Promise,We each have a voice that counts,Autonomy and control,102,I am involved in deciding on changes introduced that affect my work area / team / department (Agree/Strongly agree).
+NI_DLB,NHS IMPACT,Development of Leadership Behaviours,,103, My immediate manager… encourages me at work
+M_3,Other,Morale,Stressors,103, My immediate manager… encourages me at work
+OV_WK_WA,Oxleas Values,We are Kind,We Aim,103,My immediate manager encourages me at work (Agree/Strongly agree) .
+PP7_2,People's Promise,We are a team,Line management,103,My immediate manager encourages me at work (Agree/Strongly agree).
+NI_DLB,NHS IMPACT,Development of Leadership Behaviours,,104," … is interested in listening to me when I describe challenges, I face"
+OV_WK_WA,Oxleas Values,We are Kind,We Aim,104,My immediate manager is interested in listening to me when I describe challenges I face (Agree/Strongly agree).
+PP1_2,People's Promise,We are compassionate and inclusive,Compassionate leadership,104,My immediate manager is interested in listening to me when I describe challenges I face (Agree/Strongly agree).
+OV_WL_WL,Oxleas Values,We Listen,We listen,105,The recognition I get for good work (Satisfied/Very satisfied) 60.
+PP2,People's Promise,We are recognised and rewarded,,105,The recognition I get for good work (Satisfied/Very satisfied).
+OV_WL_WL,Oxleas Values,We Listen,We listen,106,"It left me feeling that my work is valued by my organisation (Yes, definitely)."
+PP5_2,People's Promise,We are always learning,Appraisals,106,"It left me feeling that my work is valued by my organisation (Yes, definitely)."
+OV_WK_WWN,Oxleas Values,We Care ,We will not ,107,Have you felt pressure from your manager to come to work (No).
+E_2,Other,Engagement,Involvement,110,There are frequent opportunities for me to show initiative in my role (Agree/Strongly agree).
+OV_WL_WA,Oxleas Values,We Listen,We Aim,110,There are frequent opportunities for me to show initiative in my role (Agree/Strongly agree).
+PP3_1,People's Promise,We each have a voice that counts,Autonomy and control,110,There are frequent opportunities for me to show initiative in my role (Agree/Strongly agree).
+OV_WC_WA,Oxleas Values,We Care ,We Aim,111,I can approach my immediate manager to talk openly about flexible working (Agree/Strongly agree).
+PP6_1,People's Promise,We work flexibly,Support for work-life balance,111,I can approach my immediate manager to talk openly about flexible working (Agree/Strongly agree).
+NI_IPC,NHS IMPACT,Investing in People & Culture,,113, I have opportunities to improve my knowledge and skills
+OV_WL_WL,Oxleas Values,We Listen,We listen,113,I have opportunities to improve my knowledge and skills (Agree/Strongly agree).
+PP5_1,People's Promise,We are always learning,Development,113,I have opportunities to improve my knowledge and skills (Agree/Strongly agree).
+NI_IPC,NHS IMPACT,Investing in People & Culture,,114, I am able to access the right learning and development opportunities when I need 
+OV_WC_WA,Oxleas Values,We Care ,We Aim,114,I am able to access the right learning and development opportunities when I need to (Agree/Strongly agree).
+PS_WS,Patient Safety,Creating a workplace conducive to safety,,114,I am able to access the right learning and development opportunities when I need to
+PP5_1,People's Promise,We are always learning,Development,114,I am able to access the right learning and development opportunities when I need to (Agree/Strongly agree).
+NI_SPV,NHS IMPACT,Shared Purpose & Vision,,115, The team I work in has a shared set of objectives
+OV_WL_WL,Oxleas Values,We Listen,We listen,115,The team I work in has a set of shared objectives (Agree/Strongly agree) .
+PP7_1,People's Promise,We are a team,Team working,115,The team I work in has a set of shared objectives (Agree/Strongly agree).
+OV_WL_WL,Oxleas Values,We Listen,We listen,116,The team I work in often meets to discuss the team's effectiveness (Agree/Strongly agree) .
+PP7_1,People's Promise,We are a team,Team working,116,The team I work in often meets to discuss the team's effectiveness (Agree/Strongly agree).
+OV_WK_WA,Oxleas Values,We are Kind,We Aim,117,My immediate manager values my work (Agree/Strongly agree).
+PP2,People's Promise,We are recognised and rewarded,,117,My immediate manager values my work (Agree/Strongly agree).
+OV_WK_WA,Oxleas Values,We are Kind,We Aim,118,My immediate manager takes a positive interest in my health and well-being (Agree/Strongly agree) .
+PP7_2,People's Promise,We are a team,Line management,118,My immediate manager takes a positive interest in my health and well-being (Agree/Strongly agree).
+NI_DLB,NHS IMPACT,Development of Leadership Behaviours,,119, … takes effective action to help me with any problems I face
+OV_WK_WL,Oxleas Values,We are Kind,We listen,119,My immediate manager takes effective action to help me with any problems I face (Agree/Strongly agree) .
+PS_WS,Patient Safety,Creating a workplace conducive to safety,,119,My immediate manager…takes effective action to help me with any problems I face
+PP1_2,People's Promise,We are compassionate and inclusive,Compassionate leadership,119,My immediate manager takes effective action to help me with any problems I face (Agree/Strongly agree).
+OV_WK_WA,Oxleas Values,We are Kind,We Aim,120,My immediate manager asks for my opinion before making decisions that affect my work (Agree/Strongly agree) .
+PP7_2,People's Promise,We are a team,Line management,120,My immediate manager asks for my opinion before making decisions that affect my work (Agree/Strongly agree).
+NI_DLB,NHS IMPACT,Development of Leadership Behaviours,,121, … works together with me to come to an understanding of problems
+OV_WK_WA,Oxleas Values,We are Kind,We Aim,121,My immediate manager works together with me to come to an understanding of problems (Agree/Strongly agree).
+PP1_2,People's Promise,We are compassionate and inclusive,Compassionate leadership,121,My immediate manager works together with me to come to an understanding of problems (Agree/Strongly agree).
+OV_WL_WL,Oxleas Values,We Listen,We listen,122,"It helped me agree clear objectives for my work (Yes, definitely) ."
+PP5_2,People's Promise,We are always learning,Appraisals,122,"It helped me agree clear objectives for my work (Yes, definitely)."
+E_1,Other,Engagement,Motivation,123,Time passes quickly when I am working (Often/Always).
+OV_WL_WA,Oxleas Values,We Listen,We Aim,123,Time passes quickly when I am working (Often/Always).
+M_3,Other,Morale,Stressors,124,Relationships at work are strained
+OV_WK_WWN,Oxleas Values,We are Kind,We will not ,124,Relationships at work are strained (Never/Rarely).
+PS_WS,Patient Safety,Creating a workplace conducive to safety,,124,Relationships at work are strained
+OV_WK_WWN,Oxleas Values,We Care ,We will not ,125,"How often, if at all, do you find your work emotionally exhausting (Never/Rarely)."
+PS_WS,Patient Safety,Creating a workplace conducive to safety,,125,How often if at all…do you find your work emotionally exhausting?
+PP4_2,People's Promise,We are safe and healthy,Burnout,125,"How often, if at all, do you find your work emotionally exhausting (Never/Rarely)."
+OV_WK_WWN,Oxleas Values,We Care ,We will not ,126,"How often, if at all, do you feel burnt out because of your work (Never/Rarely)."
+PP4_2,People's Promise,We are safe and healthy,Burnout,126,"How often, if at all, do you feel burnt out because of your work (Never/Rarely)."
+OV_WK_WWN,Oxleas Values,We Care ,We will not ,127,"How often, if at all, do you feel that every working hour is tiring for you (Never/Rarely)."
+PP4_2,People's Promise,We are safe and healthy,Burnout,127,"How often, if at all, do you feel that every working hour is tiring for you (Never/Rarely)."
+OV_WK_WWN,Oxleas Values,We Care ,We will not ,128,"How often, if at all, do you not have enough energy for family and friends during leisure time (Never/Rarely)."
+PP4_2,People's Promise,We are safe and healthy,Burnout,128,"How often, if at all, do you not have enough energy for family and friends during leisure time (Never/Rarely)."
+OV_WL_WL,Oxleas Values,We Listen,We listen,129,The extent to which my organisation values my work (Satisfied/Very satisfied).
+PP2,People's Promise,We are recognised and rewarded,,129,The extent to which my organisation values my work (Satisfied/Very satisfied).
+OV_WK_WWN,Oxleas Values,We Care ,We will not ,130,During the last 12 months have you felt unwell as a result of work related stress (No).
+PS_WS,Patient Safety,Creating a workplace conducive to safety,,130,Whether felt unwell as a result of work-related stress in the last 12 months
+PP4_3,People's Promise,We are safe and healthy,Negative experiences,130,During the last 12 months have you felt unwell as a result of work related stress (No).
+OV_WK_WWN,Oxleas Values,We are Fair ,We will not ,131,In the last 12 months have you personally experienced discrimination at work from a manager / team leader or other colleagues (No).
+PP1_3,People's Promise,We are compassionate and inclusive,Diversity and equality,131,In the last 12 months have you personally experienced discrimination at work from a manager / team leader or other colleagues (No).
+OV_WK_WWN,Oxleas Values,We are Fair ,We will not ,132,"In the last 12 months have you personally experienced discrimination at work from patients / service users, their relatives or other members of the public (No) ."
+PS_PS,Patient Safety,Personal Safety,,132,"In the last 12 months how many times have you personally experienced physical violence at work from patients / service users, their relatives or other members of the public?"
+PP4_3,People's Promise,We are safe and healthy,Negative experiences,132,"In the last 12 months how many times have you personally experienced physical violence at work from patients / service users, their relatives or other members of the public (Never)."
+PP4_3,People's Promise,We are safe and healthy,Negative experiences,132,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from patients / service users, their relatives or other members of the public (Never)."
+PP1_3,People's Promise,We are compassionate and inclusive,Diversity and equality,132,"In the last 12 months have you personally experienced discrimination at work from patients / service users, their relatives or other members of the public (No)."
