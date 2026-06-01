@@ -1,6 +1,17 @@
 import_raw_data <- function() {
 
-# Script for importing raw data sets
+# Script for importing all necessary data sets. Also performs transformation on
+# national staff survey results into a long format .csv.
+
+##########################
+# ~~~ MAPPING TABLES ~~~ #
+##########################
+
+# Source: created locally by Oxleas
+ox_teams_map <- read_csv("maps/ox_teams_map.csv")
+theme_questions_map <- read_csv("maps/theme_questions_map.csv")
+question_scores_map <- read_csv("maps/question_scores_map.csv")
+question_options_map <- read_csv("maps/question_options_map.csv")
 
 #################################
 # ~~~ NATIONAL STAFF SURVEY ~~~ #
@@ -45,6 +56,13 @@ nat_results <- tryCatch(
   }
 )
 
+# Also extract the notes sheet as a mapping table
+nat_results_notes <-
+  read_excel(file,"Notes") %>%
+  rename_with(~c("id","id_description"),.cols=1:2) %>%
+  filter(!is.na(id))%>%
+  filter(!is.na(id_description))
+
 
 #############
 # TRANSFORM #
@@ -61,6 +79,17 @@ nat_results <- nat_results %>%
   pivot_longer(cols = !starts_with("org"), # Make into long format
                names_to = "val_type",
                values_to = "val") %>%
+  # joins to nat_results_notes data in order to make q_text available
+  mutate(join_key = sub(".{5}$", "", sub("_n", "", val_type))) %>%
+  left_join(
+    nat_results_notes %>%
+      transmute(
+        join_key = sub(".{5}$", "", id),
+        id_description
+      ),
+    by = "join_key"
+  ) %>%
+  select(-join_key) %>%
   mutate(
     year = str_sub(val_type,-4),           # Extract year from val_type col
     val_type = str_sub(val_type,1,-6)      # Remaining part of val_type remains
@@ -69,8 +98,7 @@ nat_results <- nat_results %>%
                                            # significance. These are not needed.
 
   filter(                                  # Keeps only what is required:
-    str_starts(val_type, "PP_") |          # People's Promise Results
-    str_starts(val_type, "response_rate") |# Response rates
+    str_starts(val_type, "PP") |          # People's Promise Results
     str_starts(val_type, "M_") |           # Morale sub-themes
     str_starts(val_type, "E_") |           # Staff Engagement sub-themes
     (str_starts(val_type, "theme") & !str_detect(val_type, "q31a")) |
@@ -91,27 +119,77 @@ nat_results <- nat_results %>%
       val_type
     ),
     val_type = if_else(str_ends(val_type, "_n"), "n", "val")
+  ) %>%
+
+  mutate (                                 # Rename values in line with theme_id
+    label = case_when(
+      label == 'theme_engagement' ~ 'E',
+      label == 'theme_morale' ~ 'M',
+      TRUE ~ label
+    )
+  ) %>%
+  pivot_wider(
+    names_from = val_type,
+    values_from = val
+  ) %>%
+  rename(score = val, id_text = id_description) %>%
+  mutate(id_text = trimws(gsub("[\r\n]", "", id_text))) %>%
+  left_join(
+    question_scores_map %>%
+      transmute(
+        q_text = trimws(gsub("[\r\n]", "", as.character(q_text))),
+        q_id,
+        q_type,
+        trust_specific,
+        down_good
+      ),
+    by = c("id_text" = "q_text")
   )
+
+nat_result_themes <- nat_results %>%
+  filter(is.na(q_id))
+
+nat_result_scores <- nat_results %>%
+  filter(!is.na(q_id))
 
 ###############################
 # ~~~ OXLEAS STAFF SURVEY ~~~ #
 ###############################
 
 # Source: Solaris dashboard files
+# columns renamed for consistency across datasets
 
-ox_q_aggregate_results <- read_csv("data-raw/positive_scoring_oxleas.csv")
-ox_q_option_results <- read_csv("data-raw/breakdown_report_oxleas.csv")
-ox_theme_results <- read_csv("data-raw/people_promise_and_themes_oxleas.csv")
-
-##########################
-# ~~~ MAPPING TABLES ~~~ #
-##########################
-
-# Source: created locally by Oxleas
-
-themes <- read_csv("maps/themes.csv")
-ox_teams <- read_csv("maps/ox_teams.csv")
-questions <- read_csv("maps/questions.csv")
+ox_q_aggregate_results <- read_csv("data-raw/positive_scoring_rpg.csv") %>%
+  rename(
+    year = Year,
+    q_id = QuestionNumber,
+    q_text = QuestionText,
+    dim = DimName,
+    dim_sub = DimValue,
+    n = BaseSize,
+    score = Score
+  )
+ox_q_option_results <- read_csv("data-raw/breakdown_report_rpg.csv") %>%
+  rename(
+    year = Year,
+    q_id = QuestionNumber,
+    q_text = QuestionText,
+    option_id = OptionCode,
+    Option_text = OptionText,
+    dim = DimName,
+    dim_sub = DimValue,
+    score = '%'
+  )
+ox_theme_results <- read_csv("data-raw/people_promise_and_themes_rpg.csv") %>%
+  rename(
+    year = Year,
+    q_id = QuestionNumber,
+    q_text = QuestionText,
+    dim = DimName,
+    dim_sub = DimValue,
+    n = BaseSize,
+    score = Score
+  )
 
 ##########################
 # ~~~ RETURN OUTPUTS ~~~ #
@@ -119,13 +197,15 @@ questions <- read_csv("maps/questions.csv")
 
 # Returns files processed above to be processed further by onward functions
 return(list(
-  nat_results = nat_results,
-  themes = themes,
-  questions = questions,
-  ox_teams = ox_teams,
+  nat_result_themes = nat_result_themes,
+  nat_result_scores = nat_result_scores,
+  nat_results_notes = nat_results_notes,
+  theme_questions_map = theme_questions_map,
+  question_scores_map = question_scores_map,
+  question_options_map = question_options_map,
+  ox_teams_map = ox_teams_map,
   ox_q_aggregate_results = ox_q_aggregate_results,
   ox_q_option_results = ox_q_option_results,
   ox_theme_results = ox_theme_results
 ))
 }
-
