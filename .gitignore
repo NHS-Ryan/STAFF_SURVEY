@@ -3,6 +3,9 @@ data-raw/breakdown_report_oxleas.csv
 data-raw/NSS_BENCHMARK_REPORT.xlsx
 data-raw/people_promise_and_themes_oxleas.csv
 data-raw/positive_scoring_oxleas.csv
+data-raw/positive_scoring_rpg.csv
+data-raw/breakdown_report_rpg.csv
+data-raw/people_promise_and_themes_rpg.csv
 data/*.csv
 maps_archive/
 .Rhistory
