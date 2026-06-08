@@ -1,0 +1,15 @@
+﻿include_dim,rename_dim
+Age,Age
+Ethnic Group,Ethnicities Grouped
+Ethnicity,Ethnicities Detailed
+Gender,Gender
+Gender Identity same as Birth Sex,Gender Identity same as Birth Sex
+Long Term Condition,Long Term Condition
+NS-SEC Class,Socio-economic Class (NS-SEC)
+Religion,Religion
+Sexuality,Sexuality
+Staff Group,Occupations Grouped
+National Breakdown 2,Directorate
+BD1,Sub-directorate
+BD3,Team
+BD4,Occupations Detailed
