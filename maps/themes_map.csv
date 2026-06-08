@@ -1,0 +1,61 @@
+theme_id,theme_text
+M,Morale
+E,Staff engagement
+PP2,We are recognised and rewarded
+PP3_1,Autonomy and control
+E_2,Involvement
+PP1,We are compassionate and inclusive
+PP4_2,Burnout
+PP7_2,Line management
+PP4_1,Health and safety climate
+PP7_1,Teamworking
+PP6_1,Support for work-life balance
+PP1_2,Compassionate leadership
+M_2,Work pressure
+M_3,Stressors
+PP5_1,Development
+PP7,We are a team
+M_1,Thinking about leaving
+PP1_1,Compassionate culture
+E_3,Advocacy
+PP1_3,Diversity and equality
+PP1_4,Inclusion
+PP4_3,Negative experiences
+PP6_2,Flexible working
+PP6,We work flexibly
+PP3_2,Raising concerns
+PP4,We are safe and healthy
+PP3,We each have a voice that counts
+E_1,Motivation
+PP5_2,Appraisals
+PP5,We are always learning
+PP1,Score out of 10 for We are compassionate and inclusive for year 20XX       
+PP1_1,Score out of 10 for Compassionate culture (sub-score) for year 20XX        
+PP1_2,Score out of 10 for Compassionate leadership (sub-score) for year 20XX     
+PP1_3,Score out of 10 for Diversity and equality (sub-score) for year 20XX       
+PP1_4,Score out of 10 for Inclusion (sub-score) for year 20XX                    
+PP2,Score out of 10 for We are recognised and rewarded for year 20XX           
+PP3,Score out of 10 for We each have a voice that counts for year 20XX         
+PP3_1,Score out of 10 for Autonomy and control (sub-score) for year 20XX         
+PP3_2,Score out of 10 for Raising concerns (sub-score) for year 20XX             
+PP4,Score out of 10 for We are safe and healthy for year 20XX                  
+PP4_1,Score out of 10 for Health and safety climate (sub-score) for year 20XX    
+PP4_2,Score out of 10 for Burnout (sub-score) for year 20XX                      
+PP4_3,Score out of 10 for Negative experiences (sub-score) for year 20XX         
+PP5,Score out of 10 for We are always learning for year 20XX                   
+PP5_1,Score out of 10 for Development (sub-score) for year 20XX                  
+PP5_2,Score out of 10 for Appraisals (sub-score) for year 20XX                   
+PP6,Score out of 10 for We work flexibly for year 20XX                         
+PP6_1,Score out of 10 for Support for work-life balance (sub-score) for year 20XX
+PP6_2,Score out of 10 for Flexible working (sub-score) for year 20XX             
+PP7,Score out of 10 for We are a team for year 20XX                            
+PP7_1,Score out of 10 for Team working (sub-score) for year 20XX                 
+PP7_2,Score out of 10 for Line management (sub-score) for year 20XX              
+E,Score out of 10 for Staff engagement for year 20XX                         
+E_1,Score out of 10 for Motivation (sub-score) for year 20XX                   
+E_2,Score out of 10 for Involvement (sub-score) for year 20XX                  
+E_3,Score out of 10 for Advocacy (sub-score) for year 20XX                     
+M,Score out of 10 for Morale for year 20XX                                   
+M_1,Score out of 10 for Thinking about leaving (sub-score) for year 20XX       
+M_2,Score out of 10 for Work pressure (sub-score) for year 20XX                
+M_3,Score out of 10 for Stressors (sub-score) for year 20XX    
