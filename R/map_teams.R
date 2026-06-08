@@ -8,18 +8,18 @@ map_teams <- function(files) {
   teams_new <- bind_rows(
 
   files$ox_q_aggregate_results %>%
-    filter(DimName == "BD3") %>%
-    select(DimValue) %>%
+    filter(dim_sub == "BD3") %>%
+    select(dim) %>%
     distinct(),
 
   files$ox_q_option_results %>%
-    filter(DimName == "BD3") %>%
-    select(DimValue) %>%
+    filter(dim_sub == "BD3") %>%
+    select(dim) %>%
     distinct(),
 
   files$ox_theme_results %>%
-    filter(DimName == "BD3") %>%
-    select(DimValue) %>%
+    filter(dim_sub == "BD3") %>%
+    select(dim) %>%
     distinct()
 
   ) %>%
