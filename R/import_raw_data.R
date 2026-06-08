@@ -11,7 +11,21 @@ import_raw_data <- function() {
 ox_teams_map <- read_csv("maps/ox_teams_map.csv")
 theme_questions_map <- read_csv("maps/theme_questions_map.csv")
 question_scores_map <- read_csv("maps/question_scores_map.csv")
-question_options_map <- read_csv("maps/question_options_map.csv")
+themes_map <- read_csv("maps/themes_map.csv")
+dims_map <- read_csv(("maps/dims_map.csv"))
+
+# Note that this file is saved as .txt to discourage opening in Excel in a
+# standard manner: some options are labelled as e.g. '1-2' which the standard
+# excel parser interprets as a date. File should only be opened in Excel using
+# the Data -> Import .csv / .txt option and setting the option_text column to be
+# identified as text.
+question_options_map <- read_csv(
+  "maps/question_options_map.txt",
+  col_types = cols(
+    q_text = col_character(),
+    option_text = col_character()
+  )
+)
 
 #################################
 # ~~~ NATIONAL STAFF SURVEY ~~~ #
@@ -63,7 +77,6 @@ nat_results_notes <-
   filter(!is.na(id))%>%
   filter(!is.na(id_description))
 
-
 #############
 # TRANSFORM #
 #############
@@ -87,7 +100,8 @@ nat_results <- nat_results %>%
         join_key = sub(".{5}$", "", id),
         id_description
       ),
-    by = "join_key"
+    by = "join_key",
+    relationship = "many-to-many"
   ) %>%
   select(-join_key) %>%
   mutate(
@@ -146,18 +160,24 @@ nat_results <- nat_results %>%
     by = c("id_text" = "q_text")
   )
 
+# Split nat_results into themes & scores dfs
 nat_result_themes <- nat_results %>%
-  filter(is.na(q_id))
+  filter(is.na(q_id)) %>%
+  rename(theme_id = label, theme_text = id_text) %>%
+  select(-c("q_id","q_type","trust_specific","down_good"))
 
 nat_result_scores <- nat_results %>%
-  filter(!is.na(q_id))
+  filter(!is.na(q_id)) %>%
+  rename(q_text = id_text)
 
 ###############################
 # ~~~ OXLEAS STAFF SURVEY ~~~ #
 ###############################
 
 # Source: Solaris dashboard files
-# columns renamed for consistency across datasets
+# Also uses dims_map dataframe which is produced by Oxleas.
+# columns renamed for consistency across datasets & joined to dims_map so that
+# dim names are clearer and dims that are not needed can be dropped.
 
 ox_q_aggregate_results <- read_csv("data-raw/positive_scoring_rpg.csv") %>%
   rename(
@@ -168,28 +188,75 @@ ox_q_aggregate_results <- read_csv("data-raw/positive_scoring_rpg.csv") %>%
     dim_sub = DimValue,
     n = BaseSize,
     score = Score
-  )
+  ) %>%
+  # Join to dims_map
+  mutate(dim = str_trim(dim)) %>%
+  left_join(
+    dims_map %>%
+      mutate(include_dim = str_trim(include_dim)),
+    by = c("dim" = "include_dim")
+  ) %>%
+  filter(is.na(dim) | dim == "" | !is.na(rename_dim)) %>%
+  mutate(
+    dim = case_when(
+      is.na(dim) | dim == "" ~ dim,
+      TRUE ~ rename_dim
+    )
+  ) %>%
+  select(-rename_dim)
+
 ox_q_option_results <- read_csv("data-raw/breakdown_report_rpg.csv") %>%
   rename(
     year = Year,
     q_id = QuestionNumber,
     q_text = QuestionText,
     option_id = OptionCode,
-    Option_text = OptionText,
+    option_text = OptionText,
     dim = DimName,
     dim_sub = DimValue,
     score = '%'
-  )
+  ) %>%
+  # Join to dims_map
+  mutate(dim = str_trim(dim)) %>%
+  left_join(
+    dims_map %>%
+      mutate(include_dim = str_trim(include_dim)),
+    by = c("dim" = "include_dim")
+  ) %>%
+  filter(is.na(dim) | dim == "" | !is.na(rename_dim)) %>%
+  mutate(
+    dim = case_when(
+      is.na(dim) | dim == "" ~ dim,
+      TRUE ~ rename_dim
+    )
+  ) %>%
+  select(-rename_dim)
+
 ox_theme_results <- read_csv("data-raw/people_promise_and_themes_rpg.csv") %>%
   rename(
     year = Year,
-    q_id = QuestionNumber,
-    q_text = QuestionText,
+    theme_id = QuestionNumber,
+    theme_text = QuestionText,
     dim = DimName,
     dim_sub = DimValue,
     n = BaseSize,
     score = Score
-  )
+  ) %>%
+  # Join to dims_map
+  mutate(dim = str_trim(dim)) %>%
+  left_join(
+    dims_map %>%
+      mutate(include_dim = str_trim(include_dim)),
+    by = c("dim" = "include_dim")
+  ) %>%
+  filter(is.na(dim) | dim == "" | !is.na(rename_dim)) %>%
+  mutate(
+    dim = case_when(
+      is.na(dim) | dim == "" ~ dim,
+      TRUE ~ rename_dim
+    )
+  ) %>%
+  select(-rename_dim)
 
 ##########################
 # ~~~ RETURN OUTPUTS ~~~ #
@@ -200,9 +267,11 @@ return(list(
   nat_result_themes = nat_result_themes,
   nat_result_scores = nat_result_scores,
   nat_results_notes = nat_results_notes,
+  themes_map = themes_map,
   theme_questions_map = theme_questions_map,
   question_scores_map = question_scores_map,
   question_options_map = question_options_map,
+  dims_map = dims_map,
   ox_teams_map = ox_teams_map,
   ox_q_aggregate_results = ox_q_aggregate_results,
   ox_q_option_results = ox_q_option_results,
