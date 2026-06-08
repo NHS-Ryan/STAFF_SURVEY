@@ -3,20 +3,20 @@
 
 map_questions <- function(files) {
 
-  questions_current <- c(files$questions$QuestionText)
+  questions_current <- c(files$question_scores_map$q_text)
 
   questions_new <- bind_rows(
 
+    files$nat_result_scores %>%
+      select(q_text) %>%
+      distinct(),
+
     files$ox_q_aggregate_results %>%
-      select(QuestionText) %>%
+      select(q_text) %>%
       distinct(),
 
     files$ox_q_option_results %>%
-      select(QuestionText) %>%
-      distinct(),
-
-    files$ox_theme_results %>%
-      select(QuestionText) %>%
+      select(q_text) %>%
       distinct()
 
   ) %>%
@@ -30,3 +30,5 @@ map_questions <- function(files) {
   }
 
 }
+
+
