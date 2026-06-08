@@ -1,4 +1,4 @@
-q_id,q_text,option_id,option_code
+q_id,q_text,option_id,option_text
 1,"In the last 12 months, have you had an appraisal, annual review, development review, or Knowledge and Skills Framework (KSF) development review?",1,Yes
 1,"In the last 12 months, have you had an appraisal, annual review, development review, or Knowledge and Skills Framework (KSF) development review?",2,No
 1,"In the last 12 months, have you had an appraisal, annual review, development review, or Knowledge and Skills Framework (KSF) development review?",3,Can't remember
@@ -246,12 +246,12 @@ q_id,q_text,option_id,option_code
 49,"When you were aged about 14, was the main or highest income earner in your household an employee, self-employed, or not working?",4,They were not working
 49,"When you were aged about 14, was the main or highest income earner in your household an employee, self-employed, or not working?",5,Prefer not to say
 49,"When you were aged about 14, was the main or highest income earner in your household an employee, self-employed, or not working?",99,Missing
-50,"When you were aged about 14, how many people worked for the main or highest income earner's employer?",1,Jan-24
+50,"When you were aged about 14, how many people worked for the main or highest income earner's employer?",1,1-24
 50,"When you were aged about 14, how many people worked for the main or highest income earner's employer?",2,25 or more
 50,"When you were aged about 14, how many people worked for the main or highest income earner's employer?",3,I don't know
 50,"When you were aged about 14, how many people worked for the main or highest income earner's employer?",4,Prefer not to say
 50,"When you were aged about 14, how many people worked for the main or highest income earner's employer?",99,Missing
-51,"When you were aged about 14, how many people did the main or highest income earner employ?",1,Jan-24
+51,"When you were aged about 14, how many people did the main or highest income earner employ?",1,1-24
 51,"When you were aged about 14, how many people did the main or highest income earner employ?",2,25 or more
 51,"When you were aged about 14, how many people did the main or highest income earner employ?",3,I don't know
 51,"When you were aged about 14, how many people did the main or highest income earner employ?",4,Prefer not to say
@@ -446,21 +446,21 @@ q_id,q_text,option_id,option_code
 79,"Thinking about your current role, how often, if at all, do you work at/from home?",5,Always
 79,"Thinking about your current role, how often, if at all, do you work at/from home?",99,Missing
 80,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from managers?",1,Never
-80,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from managers?",2,01-Feb
-80,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from managers?",3,03-May
-80,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from managers?",4,06-Oct
+80,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from managers?",2,1-2
+80,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from managers?",3,3-5
+80,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from managers?",4,6-10
 80,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from managers?",5,More than 10
 80,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from managers?",99,Missing
 81,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from patients / service users, their relatives or other members of the public?",1,Never
-81,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from patients / service users, their relatives or other members of the public?",2,01-Feb
-81,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from patients / service users, their relatives or other members of the public?",3,03-May
-81,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from patients / service users, their relatives or other members of the public?",4,06-Oct
+81,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from patients / service users, their relatives or other members of the public?",2,1-2
+81,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from patients / service users, their relatives or other members of the public?",3,3-5
+81,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from patients / service users, their relatives or other members of the public?",4,6-10
 81,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from patients / service users, their relatives or other members of the public?",5,More than 10
 81,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from patients / service users, their relatives or other members of the public?",99,Missing
 82,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from other colleagues?",1,Never
-82,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from other colleagues?",2,01-Feb
-82,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from other colleagues?",3,03-May
-82,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from other colleagues?",4,06-Oct
+82,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from other colleagues?",2,1-2
+82,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from other colleagues?",3,3-5
+82,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from other colleagues?",4,6-10
 82,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from other colleagues?",5,More than 10
 82,"In the last 12 months how many times have you personally experienced harassment, bullying or abuse at work from other colleagues?",99,Missing
 83,I am confident that my organisation would address my concern.,1,Strongly disagree
@@ -488,15 +488,15 @@ q_id,q_text,option_id,option_code
 86,"As soon as I can find another job, I will leave this organisation.",5,Strongly agree
 86,"As soon as I can find another job, I will leave this organisation.",99,Missing
 87,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from staff / colleagues?",1,Never
-87,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from staff / colleagues?",2,01-Feb
-87,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from staff / colleagues?",3,03-May
-87,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from staff / colleagues?",4,06-Oct
+87,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from staff / colleagues?",2,1-2
+87,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from staff / colleagues?",3,3-5
+87,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from staff / colleagues?",4,6-10
 87,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from staff / colleagues?",5,More than 10
 87,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from staff / colleagues?",99,Missing
 88,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from patients / service users, their relatives or other members of the public?",1,Never
-88,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from patients / service users, their relatives or other members of the public?",2,01-Feb
-88,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from patients / service users, their relatives or other members of the public?",3,03-May
-88,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from patients / service users, their relatives or other members of the public?",4,06-Oct
+88,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from patients / service users, their relatives or other members of the public?",2,1-2
+88,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from patients / service users, their relatives or other members of the public?",3,3-5
+88,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from patients / service users, their relatives or other members of the public?",4,6-10
 88,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from patients / service users, their relatives or other members of the public?",5,More than 10
 88,"In the last 12 months, how many times have you been the target of unwanted behaviour of a sexual nature in the workplace from patients / service users, their relatives or other members of the public?",99,Missing
 89,There are enough staff at this organisation for me to do my job properly.,1,Strongly disagree
@@ -551,21 +551,21 @@ q_id,q_text,option_id,option_code
 98,How many years have you worked for this organisation?,6,More than 15 years
 98,How many years have you worked for this organisation?,99,Missing
 99,In the last 12 months how many times have you personally experienced physical violence at work from other colleagues?,1,Never
-99,In the last 12 months how many times have you personally experienced physical violence at work from other colleagues?,2,01-Feb
-99,In the last 12 months how many times have you personally experienced physical violence at work from other colleagues?,3,03-May
-99,In the last 12 months how many times have you personally experienced physical violence at work from other colleagues?,4,06-Oct
+99,In the last 12 months how many times have you personally experienced physical violence at work from other colleagues?,2,1-2
+99,In the last 12 months how many times have you personally experienced physical violence at work from other colleagues?,3,3-5
+99,In the last 12 months how many times have you personally experienced physical violence at work from other colleagues?,4,6-10
 99,In the last 12 months how many times have you personally experienced physical violence at work from other colleagues?,5,More than 10
 99,In the last 12 months how many times have you personally experienced physical violence at work from other colleagues?,99,Missing
 100,In the last 12 months how many times have you personally experienced physical violence at work from managers?,1,Never
-100,In the last 12 months how many times have you personally experienced physical violence at work from managers?,2,01-Feb
-100,In the last 12 months how many times have you personally experienced physical violence at work from managers?,3,03-May
-100,In the last 12 months how many times have you personally experienced physical violence at work from managers?,4,06-Oct
+100,In the last 12 months how many times have you personally experienced physical violence at work from managers?,2,1-2
+100,In the last 12 months how many times have you personally experienced physical violence at work from managers?,3,3-5
+100,In the last 12 months how many times have you personally experienced physical violence at work from managers?,4,6-10
 100,In the last 12 months how many times have you personally experienced physical violence at work from managers?,5,More than 10
 100,In the last 12 months how many times have you personally experienced physical violence at work from managers?,99,Missing
 101,"In the last 12 months how many times have you personally experienced physical violence at work from patients / service users, their relatives or other members of the public?",1,Never
-101,"In the last 12 months how many times have you personally experienced physical violence at work from patients / service users, their relatives or other members of the public?",2,01-Feb
-101,"In the last 12 months how many times have you personally experienced physical violence at work from patients / service users, their relatives or other members of the public?",3,03-May
-101,"In the last 12 months how many times have you personally experienced physical violence at work from patients / service users, their relatives or other members of the public?",4,06-Oct
+101,"In the last 12 months how many times have you personally experienced physical violence at work from patients / service users, their relatives or other members of the public?",2,1-2
+101,"In the last 12 months how many times have you personally experienced physical violence at work from patients / service users, their relatives or other members of the public?",3,3-5
+101,"In the last 12 months how many times have you personally experienced physical violence at work from patients / service users, their relatives or other members of the public?",4,6-10
 101,"In the last 12 months how many times have you personally experienced physical violence at work from patients / service users, their relatives or other members of the public?",5,More than 10
 101,"In the last 12 months how many times have you personally experienced physical violence at work from patients / service users, their relatives or other members of the public?",99,Missing
 102,I am involved in deciding on changes introduced that affect my work area / team / department.,1,Strongly disagree
