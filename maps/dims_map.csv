@@ -1,15 +1,15 @@
-﻿include_dim,rename_dim
-Age,Age
-Ethnic Group,Ethnicities Grouped
-Ethnicity,Ethnicities Detailed
-Gender,Gender
-Gender Identity same as Birth Sex,Gender Identity same as Birth Sex
-Long Term Condition,Long Term Condition
-NS-SEC Class,Socio-economic Class (NS-SEC)
-Religion,Religion
-Sexuality,Sexuality
-Staff Group,Occupations Grouped
-National Breakdown 2,Directorate
-BD1,Sub-directorate
-BD3,Team
-BD4,Occupations Detailed
+﻿include_dim,rename_dim,filter_family
+Age,Age,protected_characteristics
+Ethnic Group,Ethnicities Grouped,protected_characteristics
+Ethnicity,Ethnicities Detailed,protected_characteristics
+Gender,Gender,protected_characteristics
+Gender Identity same as Birth Sex,Gender Identity same as Birth Sex,protected_characteristics
+Long Term Condition,Long Term Condition,protected_characteristics
+NS-SEC Class,Socio-economic Class (NS-SEC),protected_characteristics
+Religion,Religion,protected_characteristics
+Sexuality,Sexuality,protected_characteristics
+Staff Group,Occupations Grouped,professional_groups
+National Breakdown 2,Directorate,organisational_structure
+BD1,Sub-directorate,organisational_structure
+BD3,Team,organisational_structure
+BD4,Occupations Detailed,professional_groups
