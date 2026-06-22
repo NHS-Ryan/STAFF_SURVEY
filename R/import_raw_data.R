@@ -168,7 +168,11 @@ nat_result_themes <- nat_results %>%
 
 nat_result_scores <- nat_results %>%
   filter(!is.na(q_id)) %>%
-  rename(q_text = id_text)
+  rename(q_text = id_text) %>%
+  mutate(
+    score = if_else(down_good == 1, 1 - score, score, missing = score)
+  ) %>%
+  select(-down_good)
 
 ###############################
 # ~~~ OXLEAS STAFF SURVEY ~~~ #
@@ -182,13 +186,27 @@ nat_result_scores <- nat_results %>%
 ox_q_aggregate_results <- read_csv("data-raw/positive_scoring_rpg.csv") %>%
   rename(
     year = Year,
-    q_id = QuestionNumber,
+    original_q_id = QuestionNumber,
     q_text = QuestionText,
     dim = DimName,
     dim_sub = DimValue,
     n = BaseSize,
     score = Score
   ) %>%
+  # Join to question_scores_map
+  mutate(
+    q_text_clean = trimws(gsub("[\r\n]", "", as.character(q_text)))
+  ) %>%
+  left_join(
+    question_scores_map %>%
+      transmute(
+        q_text_clean = trimws(gsub("[\r\n]", "", as.character(q_text))),
+        q_id
+      ) %>%
+      distinct(q_text_clean, .keep_all = TRUE),
+    by = "q_text_clean"
+  ) %>%
+  select(-original_q_id, -q_text_clean) %>%
   # Join to dims_map
   mutate(dim = str_trim(dim)) %>%
   left_join(
@@ -203,12 +221,22 @@ ox_q_aggregate_results <- read_csv("data-raw/positive_scoring_rpg.csv") %>%
       TRUE ~ rename_dim
     )
   ) %>%
-  select(-rename_dim)
+  select(-rename_dim) %>%
+  # Replace names with team_short from ox_teams_map
+  left_join(
+    ox_teams_map,
+    by = c("dim_sub" = "team_full")
+  ) %>%
+  mutate(
+    dim_sub = if_else(!is.na(team_short), team_short, dim_sub)
+  ) %>%
+  select(-c("team_short","filter_family"))
+
 
 ox_q_option_results <- read_csv("data-raw/breakdown_report_rpg.csv") %>%
   rename(
     year = Year,
-    q_id = QuestionNumber,
+    original_q_id = QuestionNumber,
     q_text = QuestionText,
     option_id = OptionCode,
     option_text = OptionText,
@@ -216,6 +244,20 @@ ox_q_option_results <- read_csv("data-raw/breakdown_report_rpg.csv") %>%
     dim_sub = DimValue,
     score = '%'
   ) %>%
+  mutate(
+    q_text_clean = trimws(gsub("[\r\n]", "", as.character(q_text)))
+  ) %>%
+  # Add in correct q_id from question_scores_map
+  left_join(
+    question_scores_map %>%
+      transmute(
+        q_text_clean = trimws(gsub("[\r\n]", "", as.character(q_text))),
+        q_id
+      ) %>%
+      distinct(q_text_clean, .keep_all = TRUE),
+    by = "q_text_clean"
+  ) %>%
+  select(-original_q_id, -q_text_clean) %>%
   # Join to dims_map
   mutate(dim = str_trim(dim)) %>%
   left_join(
@@ -230,18 +272,32 @@ ox_q_option_results <- read_csv("data-raw/breakdown_report_rpg.csv") %>%
       TRUE ~ rename_dim
     )
   ) %>%
-  select(-rename_dim)
+  select(-c("rename_dim","filter_family"))
 
 ox_theme_results <- read_csv("data-raw/people_promise_and_themes_rpg.csv") %>%
   rename(
     year = Year,
-    theme_id = QuestionNumber,
+    original_theme_id = QuestionNumber,
     theme_text = QuestionText,
     dim = DimName,
     dim_sub = DimValue,
     n = BaseSize,
     score = Score
   ) %>%
+  # Add correct theme_id from themes_map
+  mutate(
+    theme_text_clean = trimws(gsub("[\r\n]", "", as.character(theme_text)))
+  ) %>%
+  left_join(
+    themes_map %>%
+      transmute(
+        theme_text_clean = trimws(gsub("[\r\n]", "", as.character(theme_text))),
+        theme_id
+      ) %>%
+      distinct(theme_text_clean, .keep_all = TRUE),
+    by = "theme_text_clean"
+  ) %>%
+  select(-original_theme_id, -theme_text_clean) %>%
   # Join to dims_map
   mutate(dim = str_trim(dim)) %>%
   left_join(
@@ -256,7 +312,16 @@ ox_theme_results <- read_csv("data-raw/people_promise_and_themes_rpg.csv") %>%
       TRUE ~ rename_dim
     )
   ) %>%
-  select(-rename_dim)
+  select(-rename_dim) %>%
+  # Replace names with team_short from ox_teams_map
+  left_join(
+    ox_teams_map,
+    by = c("dim_sub" = "team_full")
+  ) %>%
+  mutate(
+    dim_sub = if_else(!is.na(team_short), team_short, dim_sub)
+  ) %>%
+  select(-c("team_short","filter_family","directorate","benchmark_group","exclude"))
 
 ##########################
 # ~~~ RETURN OUTPUTS ~~~ #
