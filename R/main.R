@@ -3,6 +3,7 @@ library(tidyverse)
 library(testthat)
 library(readxl)
 library(here)
+library(httr2)
 
 # Load functions
 source("R/config.R")
@@ -15,6 +16,8 @@ source("R/map_themes.R")
 source("R/anonymity_suppression.R")
 source("R/calculate_themes.R")
 source("R/write_outputs.R")
+source("R/get_ods_data.R")
+source("R/add_org_region_data.R")
 
 # Load environment variables
 vars <- config()
@@ -34,10 +37,15 @@ map_teams(files)
 map_themes(files)
 
 # Calculate locally agreed theme results
-files$ox_theme_results <- calculate_themes(files)
+files <- calculate_themes(files)
 
 # Enforce anonymity suppression rules
 files <-  anonymity_suppression(files, vars)
+
+# Use ODS API to get region data for orgs and add into nat_theme_results &
+# nat_score_results
+files <- get_ods_data(files)
+files <- add_org_region_data(files)
 
 # Run tests
 testthat::test_dir("tests/testthat")
