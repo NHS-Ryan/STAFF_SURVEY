@@ -24,8 +24,79 @@ load_csv_files <- function() {
   )
 }
 
-files <- load_csv_files()
+load_postgres_files <- function(schema = Sys.getenv("STAFF_SURVEY_DB_SCHEMA", "test")) {
 
+  required_pkgs <- c("DBI", "RPostgres", "jsonlite")
+
+  missing_pkgs <- required_pkgs[
+    !vapply(required_pkgs, requireNamespace, logical(1), quietly = TRUE)
+  ]
+
+  if (length(missing_pkgs) > 0) {
+    stop(
+      "Missing R packages: ",
+      paste(missing_pkgs, collapse = ", ")
+    )
+  }
+
+  secret_id <- Sys.getenv(
+    "STAFF_SURVEY_DB_SECRET",
+    unset = "staff-survey/prod/postgres/app"
+  )
+
+  secret_string <- system2(
+    "aws",
+    args = c(
+      "secretsmanager", "get-secret-value",
+      "--secret-id", secret_id,
+      "--query", "SecretString",
+      "--output", "text"
+    ),
+    stdout = TRUE
+  )
+
+  secret <- jsonlite::fromJSON(paste(secret_string, collapse = "\n"))
+
+  con <- DBI::dbConnect(
+    RPostgres::Postgres(),
+    host = secret$host,
+    port = as.integer(secret$port),
+    dbname = secret$dbname,
+    user = secret$username,
+    password = secret$password
+  )
+
+  on.exit(DBI::dbDisconnect(con), add = TRUE)
+
+  read_pg_table <- function(table_name) {
+    DBI::dbReadTable(
+      con,
+      DBI::Id(schema = schema, table = table_name)
+    )
+  }
+
+  list(
+    theme_questions_map    = read_pg_table("theme_questions_map"),
+    themes_map             = read_pg_table("themes_map"),
+    ox_teams_map           = read_pg_table("ox_teams_map"),
+    nat_result_themes      = read_pg_table("nat_result_themes"),
+    nat_result_scores      = read_pg_table("nat_result_scores"),
+    ox_q_aggregate_results = read_pg_table("ox_q_aggregate_results"),
+    ox_q_option_results    = read_pg_table("ox_q_option_results"),
+    ox_theme_results       = read_pg_table("ox_theme_results"),
+    dims_map               = read_pg_table("dims_map"),
+    question_scores_map    = read_pg_table("question_scores_map"),
+    question_options_map   = read_pg_table("question_options_map")
+  )
+}
+
+data_backend <- Sys.getenv("STAFF_SURVEY_DATA_BACKEND", "csv")
+
+files <- if (identical(data_backend, "postgres")) {
+  load_postgres_files()
+} else {
+  load_csv_files()
+}
 get_theme_questions_map <- function() files$theme_questions_map
 get_ox_teams_map <- function() files$ox_teams_map
 get_nat_result_themes <- function() files$nat_result_themes
