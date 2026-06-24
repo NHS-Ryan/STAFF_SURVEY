@@ -50,12 +50,12 @@ message("Maps folder: ", maps_dir)
 
 csv_files <- c(
   if (dir.exists(data_dir)) {
-    list.files(data_dir, pattern = "\\.csv$", full.names = TRUE)
+    list.files(data_dir, pattern = "\\.(csv|txt)$", full.names = TRUE)
   } else {
     character(0)
   },
   if (dir.exists(maps_dir)) {
-    list.files(maps_dir, pattern = "\\.csv$", full.names = TRUE)
+    list.files(maps_dir, pattern = "\\.(csv|txt)$", full.names = TRUE)
   } else {
     character(0)
   }
