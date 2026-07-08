@@ -8,7 +8,6 @@ prepare_theme_results_inputs <- function(files) {
     rename(q_id = q_id.y)
 
   themes <- files$theme_questions_map %>%
-    filter(!theme %in% c("People's Promise","Other")) %>%
     mutate(subdomain = replace_na(subdomain, "No subdomain"))
 
   list(
@@ -41,20 +40,35 @@ calculate_theme_results_nat <- function(files) {
     filter(!is.na(theme_id)) %>%
     group_by(year, org_id, org_name, org_type, theme_id) %>%
     summarise(
-      score = if (all(is.na(score))) NA_real_ else mean(score, na.rm = TRUE),
+      score = if (
+        dplyr::n_distinct(q_id[!is.na(score)]) ==
+        dplyr::n_distinct(.env$x$themes$q_id[.env$x$themes$theme_id == dplyr::first(theme_id)])
+      ) mean(score, na.rm = TRUE) else NA_real_,
       .groups = "drop"
     )
 }
 
 calculate_theme_results_ox <- function(new_theme_results_inputs) {
+
+  expected_questions <- new_theme_results_inputs$themes %>%
+    dplyr::count(theme_id, name = "expected_n")
+
   new_theme_results_inputs$df_q %>%
     left_join(new_theme_results_inputs$themes, by = "q_id", relationship = "many-to-many") %>%
     filter(!is.na(theme_id)) %>%
-    group_by(year, theme, domain, subdomain, dim, dim_sub) %>%
+    left_join(expected_questions, by = "theme_id") %>%
+    group_by(year, theme_id, theme, domain, subdomain, dim, dim_sub) %>%
     summarise(
-      score = if (all(is.na(score))) NA_real_ else mean(score, na.rm = TRUE),
+      score = if (
+        dplyr::n_distinct(q_id[!is.na(score)]) == dplyr::first(expected_n)
+      ) {
+        mean(score, na.rm = TRUE)
+      } else {
+        NA_real_
+      },
       .groups = "drop"
-    )
+    ) %>%
+    select(year, theme, domain, subdomain, dim, dim_sub, score)
 }
 
 calculate_themes <- function(files) {
