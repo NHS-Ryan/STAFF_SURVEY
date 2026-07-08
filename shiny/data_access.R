@@ -196,8 +196,87 @@ get_question_table_df <- function(trust_sel,
     unique()#
 
   question_lookup <- get_question_scores_map() %>%
-    dplyr::select(q_id, q_text_short) %>%
+    dplyr::select(dplyr::any_of(c("q_id", "q_text_short", "q_text"))) %>%
     dplyr::distinct(q_id, .keep_all = TRUE)
+
+  build_question_table <- function(question_rows) {
+
+    years <- if (trust_only) {
+      sort(unique(get_nat_result_scores()$year))
+    } else {
+      sort(unique(get_ox_q_aggregate_results()$year))
+    }
+
+    question_labels <- tibble::tibble(q_id = selected_q_ids) %>%
+      dplyr::left_join(question_lookup, by = "q_id") %>%
+      dplyr::mutate(
+        question_label = dplyr::coalesce(
+          as.character(q_text_short),
+          as.character(q_text),
+          as.character(q_id)
+        )
+      ) %>%
+      dplyr::select(q_id, question_label)
+
+    summarised <- question_rows %>%
+      dplyr::group_by(q_id, year) %>%
+      dplyr::summarise(
+        score = if (all(is.na(.data[[score]]))) {
+          NA_real_
+        } else {
+          mean(.data[[score]], na.rm = TRUE)
+        },
+        has_n = if ("n" %in% names(question_rows)) {
+          any(!is.na(.data[["n"]]))
+        } else {
+          FALSE
+        },
+        row_present = TRUE,
+        .groups = "drop"
+      )
+
+    full <- tidyr::expand_grid(
+      q_id = selected_q_ids,
+      year = years
+    ) %>%
+      dplyr::left_join(question_labels, by = "q_id") %>%
+      dplyr::left_join(summarised, by = c("q_id", "year")) %>%
+      dplyr::mutate(
+        missing_reason = dplyr::case_when(
+          is.na(row_present) ~ "not_available",
+          is.na(score) & !has_n ~ "not_available",
+          is.na(score) & has_n ~ "suppressed",
+          TRUE ~ "available"
+        )
+      )
+
+    score_wide <- full %>%
+      dplyr::select(q_id, question_label, year, score) %>%
+      tidyr::pivot_wider(
+        names_from = year,
+        values_from = score,
+        names_sort = TRUE
+      )
+
+    reason_wide <- full %>%
+      dplyr::select(q_id, year, missing_reason) %>%
+      tidyr::pivot_wider(
+        names_from = year,
+        values_from = missing_reason,
+        names_prefix = "missing_reason_",
+        names_sort = TRUE
+      )
+
+    latest_counts <- get_latest_response_counts(question_rows)
+
+    score_wide %>%
+      dplyr::left_join(reason_wide, by = "q_id") %>%
+      dplyr::left_join(latest_counts, by = "q_id") %>%
+      dplyr::arrange(q_id) %>%
+      dplyr::select(-q_id) %>%
+      dplyr::rename(Question = question_label)
+  }
+
 
   trust_only <- (
     filter_family == "Organisational Structure" &&
@@ -214,33 +293,9 @@ get_question_table_df <- function(trust_sel,
     trust_questions <- get_nat_result_scores() %>%
       filter(org_id == selected_org_id, q_id %in% selected_q_ids)
 
-    latest_counts <- get_latest_response_counts(trust_questions)
-
-    return(
-      trust_questions %>%
-        left_join(question_lookup, by = "q_id") %>%
-        mutate(
-          question_label = dplyr::coalesce(
-            as.character(q_text_short),
-            as.character(q_text)
-          )
-        ) %>%
-      group_by(q_id, question_label, year) %>%
-        summarise(
-          score = if (all(is.na(.data[[score]]))) NA_real_ else mean(.data[[score]], na.rm = TRUE),
-          .groups = "drop"
-        ) %>%
-        tidyr::pivot_wider(
-          names_from = year,
-          values_from = score,
-          names_sort = TRUE
-        ) %>%
-        left_join(latest_counts, by = "q_id") %>%
-        arrange(q_id) %>%
-        select(-q_id) %>%
-        rename(Question = question_label)
-    )
+    return(build_question_table(trust_questions))
   }
+
 
   base_questions <- get_ox_q_aggregate_results() %>%
     filter(q_id %in% selected_q_ids)
@@ -252,14 +307,10 @@ get_question_table_df <- function(trust_sel,
     (is.null(team) || team == "All")
   ) {
     filtered_questions <- base_questions %>%
-      filter(dim == "Directorate", dim_sub == directorate)
-
-    if (nrow(filtered_questions) == 0) {
-      directorate_teams <- get_team_aliases(directorate)
-
-      filtered_questions <- base_questions %>%
-        filter(dim == "Team", dim_sub %in% directorate_teams)
-    }
+      dplyr::filter(
+        dim == "Directorate",
+        dim_sub == .env$directorate
+      )
 
   } else {
     filtered_questions <- base_questions %>%
@@ -275,30 +326,7 @@ get_question_table_df <- function(trust_sel,
       )
   }
 
-  latest_counts <- get_latest_response_counts(filtered_questions)
-
-  filtered_questions %>%
-    left_join(question_lookup, by = "q_id") %>%
-    mutate(
-      question_label = dplyr::coalesce(
-        as.character(q_text_short),
-        as.character(q_text)
-      )
-    ) %>%
-    group_by(q_id, question_label, year) %>%
-    summarise(
-      score = if (all(is.na(.data[[score]]))) NA_real_ else mean(.data[[score]], na.rm = TRUE),
-      .groups = "drop"
-    ) %>%
-    tidyr::pivot_wider(
-      names_from = year,
-      values_from = score,
-      names_sort = TRUE
-    ) %>%
-    left_join(latest_counts, by = "q_id") %>%
-    arrange(q_id) %>%
-    select(-q_id) %>%
-    rename(Question = question_label)
+  build_question_table(filtered_questions)
 
 }
 
@@ -1194,9 +1222,7 @@ get_benchmark_bar_df <- function(theme_sel,
       team
     }
 
-    # -----------------------------
-    # Team tab: All teams in selected directorate
-    # -----------------------------
+
     # -----------------------------
     # Team tab: All teams in selected directorate
     # -----------------------------
@@ -1474,7 +1500,7 @@ get_metric_data_df <- function(trust_sel,
     comparison_scores <- comparison_set %>%
       group_by(year, dim_sub) %>%
       summarise(
-        score = if (all(is.na(.data[[score]]))) NA_real_ else mean(.data[[score]], na.rm = TRUE),
+        score = if (any(is.na(.data[[score]]))) NA_real_ else mean(.data[[score]], na.rm = TRUE),
         .groups = "drop"
       ) %>%
       filter(!is.na(score)) %>%
