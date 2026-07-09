@@ -441,7 +441,7 @@ build_ui <- function() {
           ),
 
           tags$img(
-            src = "www/logo.png",
+            src = "logo.png",
             class = "app-logo"
           )
         )

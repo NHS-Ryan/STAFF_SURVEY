@@ -42,8 +42,8 @@ files <- calculate_themes(files)
 # Enforce anonymity suppression rules
 files <-  anonymity_suppression(files, vars)
 
-# Use ODS API to get region data for orgs and add into nat_theme_results &
-# nat_score_results
+# Use Organisation Data Search (ODS) API to get region data for orgs and add
+# into nat_theme_results & nat_score_results
 files <- get_ods_data(files)
 files <- add_org_region_data(files)
 

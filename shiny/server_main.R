@@ -5,6 +5,31 @@
 build_server <- function() {
   function(input, output, session) {
 
+
+    # -----------------------------
+    # Messsages when there's nothing to display in Plotly
+    # -----------------------------
+    empty_plotly_message <- function(message) {
+      plotly::plot_ly() %>%
+        plotly::layout(
+          xaxis = list(visible = FALSE),
+          yaxis = list(visible = FALSE),
+          annotations = list(
+            list(
+              text = message,
+              x = 0.5,
+              y = 0.5,
+              xref = "paper",
+              yref = "paper",
+              showarrow = FALSE,
+              align = "center",
+              font = list(size = 16, color = "#333")
+            )
+          ),
+          margin = list(l = 20, r = 20, t = 20, b = 20)
+        )
+    }
+
     # -----------------------------
     # Theme / Domain / Sub-domain
     # -----------------------------
@@ -544,6 +569,34 @@ build_server <- function() {
 
       shiny::req(input$trust, input$selected_theme, input$selected_domain, cancelOutput = TRUE)
 
+      if (
+        benchmark_view() == "team_benchmark_group" &&
+        active_filter_family() == "Organisational Structure" &&
+        !is.null(active_team()) &&
+        active_team() != "All"
+      ) {
+
+        selected_team <- files$ox_teams_map %>%
+          dplyr::filter(
+            directorate == active_directorate(),
+            team_full == active_team() | team_short == active_team()
+          ) %>%
+          dplyr::slice(1)
+
+        no_benchmark_group <- (
+          nrow(selected_team) == 0 ||
+            is.na(selected_team$benchmark_group[[1]])
+        )
+
+        if (no_benchmark_group) {
+          return(
+            empty_plotly_message(
+              "This team is unique! We have not allocated any teams to benchmark it against."
+            )
+          )
+        }
+      }
+
       df <- get_benchmark_bar_df(
         theme_sel = input$selected_theme,
         domain_sel = input$selected_domain,
@@ -587,6 +640,14 @@ build_server <- function() {
           is.finite(plot_score)
         ) %>%
         arrange(desc(plot_score))
+
+      if (nrow(df) == 0) {
+        return(
+          empty_plotly_message(
+            "No benchmark data available for this selection."
+          )
+        )
+      }
 
       shiny::validate(
         shiny::need(nrow(df) > 0, "No benchmark group available for this selection")
@@ -994,22 +1055,44 @@ build_server <- function() {
         "Data removed to preserve respondent anonymity. See notes & sources tab for more details"
       )
 
-      df_display <- df %>%
-        dplyr::mutate(
-          dplyr::across(
-            dplyr::all_of(year_cols),
-            ~ dplyr::if_else(
-              is.na(.x),
-              paste0(
-                '<span class="suppressed-cell" title="',
-                suppression_msg,
-                '">?</span>'
-              ),
-              sprintf("%.1f%%", as.numeric(.x) * 100)
-            )
-          )
-        )
+      not_available_msg <- htmltools::htmlEscape(
+        "This question was not included in this annual survey."
+      )
 
+      df_display <- df
+
+      df_display <- df_display %>%
+        dplyr::select(-dplyr::starts_with("missing_reason_"))
+
+
+      for (yr in year_cols) {
+
+        reason_col <- paste0("missing_reason_", yr)
+
+        df_display[[yr]] <- mapply(
+          function(value, reason) {
+
+            if (!is.na(value)) {
+              return(sprintf("%.1f%%", as.numeric(value) * 100))
+            }
+
+            tooltip <- if (!is.na(reason) && reason == "not_available") {
+              not_available_msg
+            } else {
+              suppression_msg
+            }
+
+            paste0(
+              '<span class="suppressed-cell" title="',
+              tooltip,
+              '">?</span>'
+            )
+          },
+          df[[yr]],
+          if (reason_col %in% names(df)) df[[reason_col]] else NA_character_,
+          USE.NAMES = FALSE
+        )
+      }
       DT::datatable(
         df_display,
         rownames = FALSE,
