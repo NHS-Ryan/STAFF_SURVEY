@@ -665,6 +665,68 @@ apply_family_filter <- function(df,
 }
 
 
+get_question_level_theme_scores <- function(theme_sel,
+                                            domain_sel,
+                                            subdomain_sel = "All",
+                                            filter_family = "Organisational Structure",
+                                            directorate = NULL,
+                                            team = NULL,
+                                            protected_dim = NULL,
+                                            protected_value = NULL,
+                                            professional_dim = NULL,
+                                            professional_value = NULL,
+                                            score = "score",
+                                            comparison = TRUE) {
+
+  selected_q_ids <- get_theme_questions_map() %>%
+    dplyr::mutate(subdomain = dplyr::coalesce(subdomain, "")) %>%
+    dplyr::filter(
+      theme == .env$theme_sel,
+      domain == .env$domain_sel,
+      if (is.null(.env$subdomain_sel) || .env$subdomain_sel == "All") {
+        TRUE
+      } else {
+        subdomain == .env$subdomain_sel
+      }
+    ) %>%
+    dplyr::pull(q_id) %>%
+    unique()
+
+  expected_n <- length(selected_q_ids)
+
+  if (expected_n == 0) {
+    return(tibble::tibble(
+      year = numeric(),
+      dim = character(),
+      dim_sub = character(),
+      score = numeric()
+    ))
+  }
+
+  get_ox_q_aggregate_results() %>%
+    dplyr::filter(q_id %in% selected_q_ids) %>%
+    apply_family_filter(
+      filter_family = filter_family,
+      directorate = directorate,
+      team = team,
+      protected_dim = protected_dim,
+      protected_value = protected_value,
+      professional_dim = professional_dim,
+      professional_value = professional_value,
+      comparison = comparison
+    ) %>%
+    dplyr::group_by(year, dim, dim_sub) %>%
+    dplyr::summarise(
+      answered_n = dplyr::n_distinct(q_id[!is.na(.data[[score]])]),
+      score = if (answered_n == expected_n) {
+        mean(.data[[score]], na.rm = TRUE)
+      } else {
+        NA_real_
+      },
+      .groups = "drop"
+    )
+}
+
 # GET CORRECT BENCHMARK DATA BASED ON TAB SELECTION
 get_theme_benchmark_df <- function(theme_sel,
                                    domain_sel,
@@ -1026,12 +1088,22 @@ get_benchmark_bar_df <- function(theme_sel,
       protected_value[[1]]
     }
 
-    base <- files$ox_theme_results %>%
-      filter(
-        theme == theme_sel,
-        domain == domain_sel
-      ) %>%
-      apply_subdomain_filter(subdomain_sel) %>%
+    base <- if (is.null(subdomain_sel) || subdomain_sel == "All") {
+      get_question_level_theme_scores(
+        theme_sel = theme_sel,
+        domain_sel = domain_sel,
+        subdomain_sel = subdomain_sel,
+        filter_family = "Organisational Structure",
+        directorate = NULL,
+        team = NULL,
+        score = score,
+        comparison = TRUE
+      )
+    } else {
+      files$ox_theme_results %>%
+        filter(theme == theme_sel, domain == domain_sel) %>%
+        apply_subdomain_filter(subdomain_sel)
+    } %>%
       filter(dim == .env$protected_dim)
 
     if (nrow(base) == 0) {
@@ -1449,6 +1521,82 @@ get_metric_data_df <- function(trust_sel,
     "Similar Trusts"
   }
 
+  if (return_type == "line" &&
+      (is.null(subdomain_sel) || subdomain_sel == "All")) {
+
+    selected_q_ids <- get_theme_questions_map() %>%
+      dplyr::mutate(subdomain = dplyr::coalesce(subdomain, "")) %>%
+      dplyr::filter(
+        theme == .env$theme_sel,
+        domain == .env$domain_sel
+      ) %>%
+      dplyr::pull(q_id) %>%
+      unique()
+
+    expected_n <- length(selected_q_ids)
+
+    if (expected_n == 0) {
+      return(tibble::tibble(year = numeric(), score = numeric()))
+    }
+
+    if (trust_only) {
+
+      selected_org_id <- get_nat_result_themes() %>%
+        dplyr::filter(org_name == trust_sel | org_id == trust_sel) %>%
+        dplyr::slice(1) %>%
+        dplyr::pull(org_id) %>%
+        dplyr::first()
+
+      return(
+        get_nat_result_scores() %>%
+          dplyr::filter(
+            org_id == .env$selected_org_id,
+            q_id %in% .env$selected_q_ids
+          ) %>%
+          dplyr::group_by(year) %>%
+          dplyr::summarise(
+            answered_n = dplyr::n_distinct(q_id[!is.na(.data[[score]])]),
+            score = if (answered_n == expected_n) {
+              mean(.data[[score]], na.rm = TRUE)
+            } else {
+              NA_real_
+            },
+            .groups = "drop"
+          ) %>%
+          dplyr::select(year, score)
+      )
+    }
+
+    selected_rows <- get_ox_q_aggregate_results() %>%
+      dplyr::filter(q_id %in% .env$selected_q_ids) %>%
+      apply_family_filter(
+        filter_family = filter_family,
+        directorate = directorate,
+        team = team,
+        protected_dim = protected_dim,
+        protected_value = protected_value,
+        professional_dim = professional_dim,
+        professional_value = professional_value,
+        comparison = FALSE
+      )
+
+    return(
+      selected_rows %>%
+        dplyr::group_by(year) %>%
+        dplyr::summarise(
+          answered_n = dplyr::n_distinct(q_id[!is.na(.data[[score]])]),
+          score = if (answered_n == expected_n) {
+            mean(.data[[score]], na.rm = TRUE)
+          } else {
+            NA_real_
+          },
+          .groups = "drop"
+        ) %>%
+        dplyr::select(year, score)
+    )
+  }
+
+
   if (trust_only) {
 
     selected_theme_ids <- get_selected_theme_ids(theme_sel, domain_sel, subdomain_sel)
@@ -1481,33 +1629,62 @@ get_metric_data_df <- function(trust_sel,
 
   } else {
 
-    base <- files$ox_theme_results %>%
-      filter(theme == theme_sel, domain == domain_sel) %>%
-      apply_subdomain_filter(subdomain_sel)
+    if (is.null(subdomain_sel) || subdomain_sel == "All") {
 
-    comparison_set <- apply_family_filter(
-      df = base,
-      filter_family = filter_family,
-      directorate = directorate,
-      team = team,
-      protected_dim = protected_dim,
-      protected_value = protected_value,
-      professional_dim = professional_dim,
-      professional_value = professional_value,
-      comparison = TRUE
-    )
-
-    comparison_scores <- comparison_set %>%
-      group_by(year, dim_sub) %>%
-      summarise(
-        score = if (any(is.na(.data[[score]]))) NA_real_ else mean(.data[[score]], na.rm = TRUE),
-        .groups = "drop"
+      comparison_scores <- get_question_level_theme_scores(
+        theme_sel = theme_sel,
+        domain_sel = domain_sel,
+        subdomain_sel = subdomain_sel,
+        filter_family = filter_family,
+        directorate = directorate,
+        team = team,
+        protected_dim = protected_dim,
+        protected_value = protected_value,
+        professional_dim = professional_dim,
+        professional_value = professional_value,
+        score = score,
+        comparison = TRUE
       ) %>%
-      filter(!is.na(score)) %>%
-      group_by(year) %>%
-      arrange(desc(score), .by_group = TRUE) %>%
-      mutate(rank = row_number()) %>%
-      ungroup()
+        dplyr::filter(!is.na(score)) %>%
+        dplyr::group_by(year) %>%
+        dplyr::arrange(desc(score), .by_group = TRUE) %>%
+        dplyr::mutate(rank = dplyr::row_number()) %>%
+        dplyr::ungroup()
+
+    } else {
+
+      base <- files$ox_theme_results %>%
+        dplyr::filter(theme == theme_sel, domain == domain_sel) %>%
+        apply_subdomain_filter(subdomain_sel)
+
+      comparison_set <- apply_family_filter(
+        df = base,
+        filter_family = filter_family,
+        directorate = directorate,
+        team = team,
+        protected_dim = protected_dim,
+        protected_value = protected_value,
+        professional_dim = professional_dim,
+        professional_value = professional_value,
+        comparison = TRUE
+      )
+
+      comparison_scores <- comparison_set %>%
+        dplyr::group_by(year, dim_sub) %>%
+        dplyr::summarise(
+          score = if (any(is.na(.data[[score]]))) {
+            NA_real_
+          } else {
+            mean(.data[[score]], na.rm = TRUE)
+          },
+          .groups = "drop"
+        ) %>%
+        dplyr::filter(!is.na(score)) %>%
+        dplyr::group_by(year) %>%
+        dplyr::arrange(desc(score), .by_group = TRUE) %>%
+        dplyr::mutate(rank = dplyr::row_number()) %>%
+        dplyr::ungroup()
+    }
 
     selector <- if (filter_family == "Organisational Structure" && !is.null(team) && team != "All") {
       function(df) df %>% filter(dim_sub %in% get_team_aliases(directorate, team))
