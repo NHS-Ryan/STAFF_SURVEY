@@ -1521,78 +1521,53 @@ get_metric_data_df <- function(trust_sel,
     "Similar Trusts"
   }
 
-  if (return_type == "line" &&
-      (is.null(subdomain_sel) || subdomain_sel == "All")) {
 
-    selected_q_ids <- get_theme_questions_map() %>%
-      dplyr::mutate(subdomain = dplyr::coalesce(subdomain, "")) %>%
-      dplyr::filter(
-        theme == .env$theme_sel,
-        domain == .env$domain_sel
-      ) %>%
-      dplyr::pull(q_id) %>%
-      unique()
+  if (return_type == "line") {
 
-    expected_n <- length(selected_q_ids)
+    qtab <- get_question_table_df(
+      trust_sel = trust_sel,
+      theme_sel = theme_sel,
+      domain_sel = domain_sel,
+      subdomain_sel = subdomain_sel,
+      filter_family = filter_family,
+      directorate = directorate,
+      team = team,
+      protected_dim = protected_dim,
+      protected_value = protected_value,
+      professional_dim = professional_dim,
+      professional_value = professional_value,
+      score = score
+    )
 
-    if (expected_n == 0) {
-      return(tibble::tibble(year = numeric(), score = numeric()))
+    year_cols <- names(qtab)[grepl("^\\d{4}$", names(qtab))]
+
+    if (length(year_cols) == 0) {
+      return(tibble::tibble(year = integer(), score = numeric()))
     }
-
-    if (trust_only) {
-
-      selected_org_id <- get_nat_result_themes() %>%
-        dplyr::filter(org_name == trust_sel | org_id == trust_sel) %>%
-        dplyr::slice(1) %>%
-        dplyr::pull(org_id) %>%
-        dplyr::first()
-
-      return(
-        get_nat_result_scores() %>%
-          dplyr::filter(
-            org_id == .env$selected_org_id,
-            q_id %in% .env$selected_q_ids
-          ) %>%
-          dplyr::group_by(year) %>%
-          dplyr::summarise(
-            answered_n = dplyr::n_distinct(q_id[!is.na(.data[[score]])]),
-            score = if (answered_n == expected_n) {
-              mean(.data[[score]], na.rm = TRUE)
-            } else {
-              NA_real_
-            },
-            .groups = "drop"
-          ) %>%
-          dplyr::select(year, score)
-      )
-    }
-
-    selected_rows <- get_ox_q_aggregate_results() %>%
-      dplyr::filter(q_id %in% .env$selected_q_ids) %>%
-      apply_family_filter(
-        filter_family = filter_family,
-        directorate = directorate,
-        team = team,
-        protected_dim = protected_dim,
-        protected_value = protected_value,
-        professional_dim = professional_dim,
-        professional_value = professional_value,
-        comparison = FALSE
-      )
 
     return(
-      selected_rows %>%
-        dplyr::group_by(year) %>%
+      qtab %>%
+        dplyr::select(dplyr::all_of(year_cols)) %>%
         dplyr::summarise(
-          answered_n = dplyr::n_distinct(q_id[!is.na(.data[[score]])]),
-          score = if (answered_n == expected_n) {
-            mean(.data[[score]], na.rm = TRUE)
-          } else {
-            NA_real_
-          },
-          .groups = "drop"
+          dplyr::across(
+            dplyr::everything(),
+            ~ if (any(is.na(.x))) {
+              NA_real_
+            } else {
+              mean(as.numeric(.x), na.rm = TRUE)
+            }
+          )
         ) %>%
-        dplyr::select(year, score)
+        tidyr::pivot_longer(
+          cols = dplyr::everything(),
+          names_to = "year",
+          values_to = "score"
+        ) %>%
+        dplyr::mutate(
+          year = as.integer(year),
+          score = as.numeric(score)
+        ) %>%
+        dplyr::arrange(year)
     )
   }
 

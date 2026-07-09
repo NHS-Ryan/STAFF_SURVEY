@@ -223,11 +223,11 @@ build_server <- function() {
         mutate(
           year = as.integer(year),
           score = as.numeric(score),
-          plot_score = if (input$selected_theme %in% c("People's Promise", "Other")) {
-            score / 10
-          } else {
+          plot_score = dplyr::if_else(
+            !is.na(score) & score > 1,
+            score / 10,
             score
-          }
+          )
         ) %>%
         filter(!is.na(year), !is.na(plot_score))
 
@@ -626,11 +626,11 @@ build_server <- function() {
         mutate(
           dim_sub = as.character(dim_sub),
           score = as.numeric(score),
-          plot_score = if (input$selected_theme %in% c("People's Promise", "Other")) {
-            score / 10
-          } else {
+          plot_score = dplyr::if_else(
+            !is.na(score) & score > 1,
+            score / 10,
             score
-          },
+          ),
           selected = dplyr::coalesce(as.logical(selected), FALSE),
           bar_colour = dplyr::if_else(selected, "#156082", "#C1E5F5")
         ) %>%
