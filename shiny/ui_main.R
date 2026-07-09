@@ -593,7 +593,7 @@ build_ui <- function() {
 
         div(
           class = "notes-sources-panel",
-          shiny::includeMarkdown("shiny/notes_sources.Rmd")
+          shiny::includeMarkdown("notes_sources.Rmd")
         )
       )
     )
