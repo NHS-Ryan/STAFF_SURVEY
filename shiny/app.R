@@ -1,4 +1,4 @@
-shiny::addResourcePath("www", "shiny/www")
+# shiny::addResourcePath("www", "shiny/www")
 
 library(shiny)
 library(dplyr)
