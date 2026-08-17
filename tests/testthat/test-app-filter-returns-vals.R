@@ -1,0 +1,11 @@
+test_that("All filter functions return vals",{
+  expect_gt(length(filter_choices_topics()),1)
+  expect_gt(length(filter_choices_domains("People's Promise")),1)
+  expect_gt(length(filter_choices_subdomains("People's Promise","We are a team")),1)
+  expect_gt(length(filter_choices_trusts()),1)
+  expect_gt(length(filter_choices_directorates()),1)
+  expect_gt(length(filter_choices_teams("Adult Acute & Crisis Mental Health (L3)")),1)
+  expect_gt(length(filter_choices_protected_dims()),1)
+  expect_gt(length(filter_choices_professional_dims()),1)
+  expect_gt(length(filter_choices_dim_values("Directorate")),1)
+})
