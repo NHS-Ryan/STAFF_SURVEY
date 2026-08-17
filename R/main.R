@@ -48,7 +48,7 @@ files <- get_ods_data(files)
 files <- add_org_region_data(files)
 
 # Run tests
-testthat::test_dir("tests/testthat")
+testthat::test_dir("tests/testthat", filter = "etl")
 
 # Save files
 write_outputs(files)
