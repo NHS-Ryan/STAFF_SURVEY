@@ -5,7 +5,7 @@ config <- function(){
 
   # List of years that we already have national staff survey dataset results
   # from
-  nat_results_files <- list.files("data/national_results/")
+  nat_results_files <- list.files(file.path(PROJECT_ROOT, "data", "national_results"))
   complete_years <-
     substr(nat_results_files,
          nchar(nat_results_files)-7,

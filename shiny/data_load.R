@@ -13,14 +13,14 @@ read_clean_csv <- function(path) {
 
 load_csv_files <- function() {
   list(
-    theme_questions_map    = read_clean_csv("maps/theme_questions_map.csv"),
-    ox_teams_map           = read_clean_csv("maps/ox_teams_map.csv"),
-    nat_result_themes      = read_clean_csv("data/nat_result_themes.csv"),
-    nat_result_scores      = read_clean_csv("data/nat_result_scores.csv"),
-    ox_q_aggregate_results = read_clean_csv("data/ox_q_aggregate_results.csv"),
-    ox_theme_results       = read_clean_csv("data/ox_theme_results.csv"),
-    dims_map               = read_clean_csv("maps/dims_map.csv"),
-    question_scores_map = read_clean_csv("maps/question_scores_map.csv")
+    theme_questions_map    = read_clean_csv(file.path(PROJECT_ROOT, "maps", "theme_questions_map.csv")),
+    ox_teams_map           = read_clean_csv(file.path(PROJECT_ROOT, "maps","ox_teams_map.csv")),
+    nat_result_themes      = read_clean_csv(file.path(PROJECT_ROOT, "data", "nat_result_themes.csv")),
+    nat_result_scores      = read_clean_csv(file.path(PROJECT_ROOT, "data", "nat_result_scores.csv")),
+    ox_q_aggregate_results = read_clean_csv(file.path(PROJECT_ROOT, "data", "ox_q_aggregate_results.csv")),
+    ox_theme_results       = read_clean_csv(file.path(PROJECT_ROOT, "data", "ox_theme_results.csv")),
+    dims_map               = read_clean_csv(file.path(PROJECT_ROOT, "maps","dims_map.csv")),
+    question_scores_map = read_clean_csv(file.path(PROJECT_ROOT, "maps","question_scores_map.csv"))
   )
 }
 
