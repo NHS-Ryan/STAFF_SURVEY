@@ -15,3 +15,15 @@ files <- anonymity_suppression(files,vars)
 suppression_threshold <- vars$suppression_threshold
 theme_inputs <- prepare_theme_results_inputs(files)
 calculated_themes <- calculate_themes(files)
+
+calculated_themes <- calculate_themes(files)
+
+nat_results <- calculated_themes$nat_result_themes
+
+trust_specific_map <- files$theme_questions_map %>%
+  filter(domain == "Trust-specific questions")
+
+question_group_ids <- files$theme_questions_map %>%
+  filter(domain == "Question Groups") %>%
+  distinct(theme_id) %>%
+  pull(theme_id)
