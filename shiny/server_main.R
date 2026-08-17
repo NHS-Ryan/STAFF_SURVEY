@@ -6,6 +6,10 @@ build_server <- function() {
   function(input, output, session) {
 
 
+    # Default options on start up
+    default_theme <- "Question Groups"
+    default_domain <- "All questions"
+
     # -----------------------------
     # Messsages when there's nothing to display in Plotly
     # -----------------------------
@@ -31,51 +35,49 @@ build_server <- function() {
     }
 
     # -----------------------------
-    # Theme / Domain / Sub-domain
+    # Get Filter Values
     # -----------------------------
     theme_choices <- reactive({
-      get_theme_questions_map() %>%
-        pull(theme) %>%
-        na.omit() %>%
-        unique() %>%
-        sort()
+      filter_choices_topics()
     })
 
     get_domain_choices <- function(selected_theme) {
-      get_theme_questions_map() %>%
-        filter(theme == selected_theme) %>%
-        pull(domain) %>%
-        na.omit() %>%
-        unique() %>%
-        sort()
+      filter_choices_domains(selected_theme)
     }
 
     get_subdomain_choices <- function(selected_theme, selected_domain) {
-      subdomain_values <- get_theme_questions_map() %>%
-        filter(
-          theme == selected_theme,
-          domain == selected_domain
-        ) %>%
-        pull(subdomain) %>%
-        na.omit() %>%
-        unique()
-
-      subdomain_values <- subdomain_values[subdomain_values != ""] %>%
-        sort()
-
-      if (length(subdomain_values) == 0) {
-        return(NULL)
-      }
-
-      c("All", subdomain_values)
+      filter_choices_subdomains(selected_theme, selected_domain)
     }
+
+    trust_choices <- reactive({
+      filter_choices_trusts()
+    })
+
+    directorate_choices <- reactive({
+      filter_choices_directorates()
+    })
+
+    team_choices <- reactive({
+      req(active_directorate())
+
+      filter_choices_teams(active_directorate())
+    })
+
+    protected_value_choices <- reactive({
+      req(input$protected_dim)
+
+      filter_choices_dim_values(input$protected_dim)
+    })
+
+    professional_value_choices <- reactive({
+      req(input$professional_dim)
+
+      filter_choices_dim_values(input$professional_dim)
+    })
 
     # -----------------------------
     # Organisational Structure
     # -----------------------------
-    trust_choices <- reactive({
-      get_trust_choices()
-    })
 
     is_oxleas_selected <- reactive({
       !is.null(input$trust) &&
@@ -83,15 +85,7 @@ build_server <- function() {
     })
 
     active_filter_family <- reactive({
-
-      unavailable_topic <- !is.null(input$selected_theme) &&
-        input$selected_theme %in% c("People's Promise", "Other")
-
       if (!is_oxleas_selected()) {
-        return("Organisational Structure")
-      }
-
-      if (unavailable_topic) {
         return("Organisational Structure")
       }
 
@@ -126,41 +120,35 @@ build_server <- function() {
       }
     })
 
-    directorate_choices <- reactive({
-      get_ox_q_aggregate_results() %>%
-        filter(dim == "Directorate") %>%
-        pull(dim_sub) %>%
-        all_and_sort()
-    })
+    active_subdomain <- reactive({
 
-    team_choices <- reactive({
-      req(active_directorate())
+      req(
+        input$selected_theme,
+        input$selected_domain
+      )
 
-      if (active_directorate() == "All") {
-        return("All")
+      available_subdomains <- get_subdomain_choices(
+        input$selected_theme,
+        input$selected_domain
+      )
+
+      # This question group has no sub-question groups.
+      if (is.null(available_subdomains)) {
+        return(NULL)
       }
 
-      get_ox_q_aggregate_results() %>%
-        filter(
-          dim == "Team",
-          directorate == active_directorate()
-        ) %>%
-        pull(dim_sub) %>%
-        all_and_sort()
+      # Retain the current selection if it is still valid.
+      if (
+        !is.null(input$selected_subdomain) &&
+        input$selected_subdomain %in% available_subdomains
+      ) {
+        return(input$selected_subdomain)
+      }
+
+      # If sub-question groups exist but the current input is
+      # absent or invalid, use the broad "All" selection.
+      "All"
     })
-
-    # -----------------------------
-    # Protected Characteristics
-    # -----------------------------
-    protected_value_choices <- reactive({
-      req(input$protected_dim)
-
-      get_ox_q_aggregate_results() %>%
-        filter(dim == input$protected_dim) %>%
-        pull(dim_sub) %>%
-        sort_only()
-    })
-
 
     # -----------------------------
     # Gauge Chart Inputs
@@ -168,11 +156,11 @@ build_server <- function() {
     gauge_inputs <- reactive({
       req(input$trust, input$selected_theme, input$selected_domain)
 
-      get_metric_data_df(
+      build_gauge_bar_data_df(
         trust_sel = input$trust,
         theme_sel = input$selected_theme,
         domain_sel = input$selected_domain,
-        subdomain_sel = input$selected_subdomain,
+        subdomain_sel = active_subdomain(),
         filter_family = active_filter_family(),
         directorate = active_directorate(),
         team = active_team(),
@@ -186,18 +174,6 @@ build_server <- function() {
     })
 
     # -----------------------------
-    # Professional Groups
-    # -----------------------------
-    professional_value_choices <- reactive({
-      req(input$professional_dim)
-
-      get_ox_q_aggregate_results() %>%
-        filter(dim == input$professional_dim) %>%
-        pull(dim_sub) %>%
-        sort_only()
-    })
-
-    # -----------------------------
     # Line Chart
     # -----------------------------
 
@@ -205,11 +181,11 @@ build_server <- function() {
     output$line_chart <- renderPlotly({
       req(input$trust, input$selected_theme, input$selected_domain)
 
-      df <- get_metric_data_df(
+      df <- build_gauge_bar_data_df(
         trust_sel = input$trust,
         theme_sel = input$selected_theme,
         domain_sel = input$selected_domain,
-        subdomain_sel = input$selected_subdomain,
+        subdomain_sel = active_subdomain(),
         filter_family = active_filter_family(),
         directorate = active_directorate(),
         team = active_team(),
@@ -361,7 +337,7 @@ build_server <- function() {
           theme == input$selected_theme,
           domain == input$selected_domain
         ) %>%
-        apply_subdomain_filter(input$selected_subdomain)
+        apply_subdomain_filter(active_subdomain())
 
       if (nrow(base) == 0) {
         return(FALSE)
@@ -597,10 +573,10 @@ build_server <- function() {
         }
       }
 
-      df <- get_benchmark_bar_df(
+      df <- build_benchmark_bar_df(
         theme_sel = input$selected_theme,
         domain_sel = input$selected_domain,
-        subdomain_sel = input$selected_subdomain,
+        subdomain_sel = active_subdomain(),
         benchmark_view = benchmark_view(),
         filter_family = active_filter_family(),
         directorate = active_directorate(),
@@ -749,23 +725,103 @@ build_server <- function() {
     })
 
 
-
     # -----------------------------
     # Dynamic UI
     # -----------------------------
     output$theme_grouping_filters <- renderUI({
 
-      # map input back to raw values for logic
       raw_theme_choices <- theme_choices()
 
-      ui_theme_choices <- raw_theme_choices %>%
-        dplyr::recode("Other" = "Engagement & Morale")
+      show_other_groupings <- isTRUE(
+        input$show_other_theme_groupings
+      )
 
-      default_theme <- if ("Patient Safety" %in% raw_theme_choices) {
-        "Patient Safety"
-      } else {
-        raw_theme_choices[1]
+      # ---------------------------------------------------------
+      # Default view: Question Groups only
+      # ---------------------------------------------------------
+      if (!show_other_groupings) {
+
+        available_domains <- get_domain_choices(
+          default_theme
+        )
+
+        current_domain <- if (
+          !is.null(input$selected_domain) &&
+          input$selected_domain %in% available_domains
+        ) {
+          input$selected_domain
+        } else if (
+          default_domain %in% available_domains
+        ) {
+          default_domain
+        } else {
+          available_domains[[1]]
+        }
+
+        available_subdomains <- get_subdomain_choices(
+          default_theme,
+          current_domain
+        )
+
+        filter_controls <- list(
+
+          # Keep selected_theme available to the server without
+          # displaying a Topic selector in the default interface.
+          div(
+            style = "display: none;",
+            selectInput(
+              inputId = "selected_theme",
+              label = NULL,
+              choices = default_theme,
+              selected = default_theme
+            )
+          ),
+
+          selectInput(
+            inputId = "selected_domain",
+            label = "Question group",
+            choices = available_domains,
+            selected = current_domain
+          )
+        )
+
+        # Only display the sub-question-group selector where the
+        # selected Question group has subdomains in the data.
+        if (!is.null(available_subdomains)) {
+
+          current_subdomain <- if (
+            !is.null(input$selected_subdomain) &&
+            input$selected_subdomain %in% available_subdomains
+          ) {
+            input$selected_subdomain
+          } else {
+            "All"
+          }
+
+          filter_controls <- append(
+            filter_controls,
+            list(
+              selectInput(
+                inputId = "selected_subdomain",
+                label = "Sub-question groups",
+                choices = available_subdomains,
+                selected = current_subdomain
+              )
+            )
+          )
+        }
+
+        return(tagList(filter_controls))
       }
+
+      # ---------------------------------------------------------
+      # Advanced view: restore the current hierarchy
+      # ---------------------------------------------------------
+
+      ui_theme_choices <- raw_theme_choices %>%
+        dplyr::recode(
+          "Other" = "Engagement & Morale"
+        )
 
       current_theme <- if (
         !is.null(input$selected_theme) &&
@@ -776,22 +832,37 @@ build_server <- function() {
         default_theme
       }
 
-      available_domains <- get_domain_choices(current_theme)
+      available_domains <- get_domain_choices(
+        current_theme
+      )
 
-      current_domain <- if (!is.null(input$selected_domain) &&
-                            input$selected_domain %in% available_domains) {
+      current_domain <- if (
+        !is.null(input$selected_domain) &&
+        input$selected_domain %in% available_domains
+      ) {
         input$selected_domain
+      } else if (
+        current_theme == default_theme &&
+        default_domain %in% available_domains
+      ) {
+        default_domain
       } else {
-        available_domains[1]
+        available_domains[[1]]
       }
 
-      available_subdomains <- get_subdomain_choices(current_theme, current_domain)
+      available_subdomains <- get_subdomain_choices(
+        current_theme,
+        current_domain
+      )
 
       filter_controls <- list(
         selectInput(
           inputId = "selected_theme",
           label = "Topic",
-          choices = setNames(raw_theme_choices, ui_theme_choices),
+          choices = setNames(
+            raw_theme_choices,
+            ui_theme_choices
+          ),
           selected = current_theme
         ),
 
@@ -804,6 +875,16 @@ build_server <- function() {
       )
 
       if (!is.null(available_subdomains)) {
+
+        current_subdomain <- if (
+          !is.null(input$selected_subdomain) &&
+          input$selected_subdomain %in% available_subdomains
+        ) {
+          input$selected_subdomain
+        } else {
+          "All"
+        }
+
         filter_controls <- append(
           filter_controls,
           list(
@@ -811,7 +892,7 @@ build_server <- function() {
               inputId = "selected_subdomain",
               label = "Sub-theme",
               choices = available_subdomains,
-              selected = "All"
+              selected = current_subdomain
             )
           )
         )
@@ -819,6 +900,41 @@ build_server <- function() {
 
       tagList(filter_controls)
     })
+
+
+    observeEvent(input$show_other_theme_groupings, {
+
+      if (!isTRUE(input$show_other_theme_groupings)) {
+
+        question_group_domains <- get_domain_choices(
+          default_theme
+        )
+
+        selected_domain <- if (
+          default_domain %in% question_group_domains
+        ) {
+          default_domain
+        } else {
+          question_group_domains[[1]]
+        }
+
+        updateSelectInput(
+          session,
+          inputId = "selected_theme",
+          choices = default_theme,
+          selected = default_theme
+        )
+
+        updateSelectInput(
+          session,
+          inputId = "selected_domain",
+          choices = question_group_domains,
+          selected = selected_domain
+        )
+      }
+
+    }, ignoreInit = TRUE)
+
 
     # Trust UI Output
     output$trust_filter <- renderUI({
@@ -963,7 +1079,7 @@ build_server <- function() {
           radioButtons(
             inputId = "protected_dim",
             label = NULL,
-            choices = get_protected_characteristic_dims(),
+            choices = filter_choices_protected_dims(),
             selected = "Age"
           ),
 
@@ -984,7 +1100,7 @@ build_server <- function() {
           radioButtons(
             inputId = "professional_dim",
             label = NULL,
-            choices = get_professional_group_dims(),
+            choices = filter_choices_professional_dims(),
             selected = "Occupations Grouped"
           ),
 
@@ -1034,11 +1150,11 @@ build_server <- function() {
     output$question_table <- DT::renderDT({
       req(input$trust, input$selected_theme, input$selected_domain)
 
-      df <- get_question_table_df(
+      df <- build_question_table_df(
         trust_sel = input$trust,
         theme_sel = input$selected_theme,
         domain_sel = input$selected_domain,
-        subdomain_sel = input$selected_subdomain,
+        subdomain_sel = active_subdomain(),
         filter_family = active_filter_family(),
         directorate = active_directorate(),
         team = active_team(),
@@ -1211,9 +1327,12 @@ build_server <- function() {
         protected_value = input$protected_value,
         professional_dim = input$professional_dim,
         professional_value = input$professional_value,
+        show_other_theme_groupings = isTRUE(
+          input$show_other_theme_groupings
+        ),
         selected_theme = input$selected_theme,
         selected_domain = input$selected_domain,
-        selected_subdomain = input$selected_subdomain
+        selected_subdomain = active_subdomain()
       )
     })
 
@@ -1296,30 +1415,108 @@ build_server <- function() {
       }
 
       # -----------------------------
-      # Theme hierarchy (always show)
+      # Theme hierarchy
       # -----------------------------
-      if (!is.null(input$selected_theme)) {
-        parts <- append(parts, list(
-          span(class = "selection-group",
-               span(class = "selection-label", "Topic: "),
-               input$selected_theme)
-        ))
-      }
+      if (isTRUE(input$show_other_theme_groupings)) {
 
-      if (!is.null(input$selected_domain)) {
-        parts <- append(parts, list(
-          span(class = "selection-group",
-               span(class = "selection-label", "Theme: "),
-               input$selected_domain)
-        ))
-      }
+        # Show the existing hierarchy in advanced mode.
+        if (!is.null(input$selected_theme)) {
 
-      if (!is.null(input$selected_subdomain) && input$selected_subdomain != "All") {
-        parts <- append(parts, list(
-          span(class = "selection-group",
-               span(class = "selection-label", "Sub-theme: "),
-               input$selected_subdomain)
-        ))
+          displayed_topic <- if (
+            input$selected_theme == "Other"
+          ) {
+            "Engagement & Morale"
+          } else {
+            input$selected_theme
+          }
+
+          parts <- append(
+            parts,
+            list(
+              span(
+                class = "selection-group",
+                span(
+                  class = "selection-label",
+                  "Topic: "
+                ),
+                displayed_topic
+              )
+            )
+          )
+        }
+
+        if (!is.null(input$selected_domain)) {
+          parts <- append(
+            parts,
+            list(
+              span(
+                class = "selection-group",
+                span(
+                  class = "selection-label",
+                  "Theme: "
+                ),
+                input$selected_domain
+              )
+            )
+          )
+        }
+
+        if (
+          !is.null(active_subdomain()) &&
+          active_subdomain() != "All"
+        ) {
+          parts <- append(
+            parts,
+            list(
+              span(
+                class = "selection-group",
+                span(
+                  class = "selection-label",
+                  "Sub-theme: "
+                ),
+                active_subdomain()
+              )
+            )
+          )
+        }
+
+      } else {
+
+        # Show the simplified Question Groups hierarchy.
+        if (!is.null(input$selected_domain)) {
+          parts <- append(
+            parts,
+            list(
+              span(
+                class = "selection-group",
+                span(
+                  class = "selection-label",
+                  "Question group: "
+                ),
+                input$selected_domain
+              )
+            )
+          )
+        }
+
+        if (
+          !is.null(active_subdomain()) &&
+          active_subdomain() != "All"
+        ) {
+          parts <- append(
+            parts,
+            list(
+              span(
+                class = "selection-group",
+                span(
+                  class = "selection-label",
+                  "Sub-question group: "
+                ),
+                active_subdomain()
+              )
+            )
+          )
+        }
       }
 
       do.call(tagList, parts)
@@ -1328,5 +1525,3 @@ build_server <- function() {
   }
 
 }
-
-
