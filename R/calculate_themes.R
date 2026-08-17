@@ -1,77 +1,170 @@
-# This file will calculate theme scores for theme groupings created by Oxleas
+# This file calculates theme scores for theme groupings created by Oxleas
+
 
 prepare_theme_results_inputs <- function(files) {
+
   questions <- files$question_scores_map
 
   df_q <- files$ox_q_aggregate_results %>%
-    left_join(questions, by = c("q_text" = "q_text")) %>%
+    left_join(
+      questions,
+      by = "q_text"
+    ) %>%
     rename(q_id = q_id.y)
 
   themes <- files$theme_questions_map %>%
-    mutate(subdomain = replace_na(subdomain, "No subdomain"))
+    mutate(
+      subdomain = replace_na(subdomain, "No subdomain")
+    )
 
   list(
     df_q = df_q,
     themes = themes,
     national_theme_results = files$ox_theme_results
   )
-
 }
 
+
 prepare_theme_results_inputs_nat <- function(files) {
+
   questions <- files$question_scores_map
 
   df_q <- files$nat_result_scores %>%
-    left_join(questions, by = c("q_text" = "q_text")) %>%
+    left_join(
+      questions,
+      by = "q_text"
+    ) %>%
     rename(q_id = q_id.y)
 
   themes <- files$theme_questions_map %>%
     filter(!theme %in% c("People's Promise", "Other")) %>%
-    mutate(subdomain = replace_na(subdomain, "No subdomain"))
+    mutate(
+      subdomain = replace_na(subdomain, "No subdomain")
+    )
 
-  list(df_q = df_q, themes = themes)
+  list(
+    df_q = df_q,
+    themes = themes
+  )
 }
+
 
 calculate_theme_results_nat <- function(files) {
+
   x <- prepare_theme_results_inputs_nat(files)
 
-  x$df_q %>%
-    left_join(x$themes, by = "q_id", relationship = "many-to-many") %>%
-    filter(!is.na(theme_id)) %>%
-    group_by(year, org_id, org_name, org_type, theme_id) %>%
-    summarise(
-      score = if (
-        dplyr::n_distinct(q_id[!is.na(score)]) ==
-        dplyr::n_distinct(.env$x$themes$q_id[.env$x$themes$theme_id == dplyr::first(theme_id)])
-      ) mean(score, na.rm = TRUE) else NA_real_,
-      .groups = "drop"
+  general_results <- x$df_q %>%
+    inner_join(
+      x$themes %>%
+        filter(domain != "Trust-specific questions") %>%
+        select(-org_id),
+      by = "q_id",
+      relationship = "many-to-many"
     )
-}
 
-calculate_theme_results_ox <- function(new_theme_results_inputs) {
+  trust_specific_results <- x$df_q %>%
+    inner_join(
+      x$themes %>%
+        filter(domain == "Trust-specific questions"),
+      by = c("q_id", "org_id"),
+      relationship = "many-to-many"
+    )
 
-  expected_questions <- new_theme_results_inputs$themes %>%
-    dplyr::count(theme_id, name = "expected_n")
-
-  new_theme_results_inputs$df_q %>%
-    left_join(new_theme_results_inputs$themes, by = "q_id", relationship = "many-to-many") %>%
+  bind_rows(
+    general_results,
+    trust_specific_results
+  ) %>%
     filter(!is.na(theme_id)) %>%
-    left_join(expected_questions, by = "theme_id") %>%
-    group_by(year, theme_id, theme, domain, subdomain, dim, dim_sub) %>%
+    group_by(
+      year,
+      org_id,
+      org_name,
+      org_type,
+      theme_id,
+      theme
+    ) %>%
     summarise(
       score = if (
-        dplyr::n_distinct(q_id[!is.na(score)]) == dplyr::first(expected_n)
+        first(theme) == "Question Groups" ||
+        n_distinct(q_id[!is.na(score)]) ==
+        n_distinct(
+          x$themes$q_id[
+            x$themes$theme_id == first(theme_id)
+          ]
+        )
       ) {
-        mean(score, na.rm = TRUE)
+        if (any(!is.na(score))) {
+          mean(score, na.rm = TRUE)
+        } else {
+          NA_real_
+        }
       } else {
         NA_real_
       },
       .groups = "drop"
     ) %>%
-    select(year, theme, domain, subdomain, dim, dim_sub, score)
+    select(-theme)
 }
 
+
+calculate_theme_results_ox <- function(new_theme_results_inputs) {
+
+  expected_questions <- new_theme_results_inputs$themes %>%
+    group_by(theme_id) %>%
+    summarise(
+      expected_n = n_distinct(q_id),
+      .groups = "drop"
+    )
+
+  new_theme_results_inputs$df_q %>%
+    left_join(
+      new_theme_results_inputs$themes,
+      by = "q_id",
+      relationship = "many-to-many"
+    ) %>%
+    filter(!is.na(theme_id)) %>%
+    left_join(
+      expected_questions,
+      by = "theme_id"
+    ) %>%
+    group_by(
+      year,
+      theme_id,
+      theme,
+      domain,
+      subdomain,
+      dim,
+      dim_sub
+    ) %>%
+    summarise(
+      score = if (
+        first(theme) == "Question Groups" ||
+        n_distinct(q_id[!is.na(score)]) == first(expected_n)
+      ) {
+        if (any(!is.na(score))) {
+          mean(score, na.rm = TRUE)
+        } else {
+          NA_real_
+        }
+      } else {
+        NA_real_
+      },
+      .groups = "drop"
+    ) %>%
+    select(
+      year,
+      theme,
+      domain,
+      subdomain,
+      dim,
+      dim_sub,
+      score
+    )
+}
+
+
 calculate_themes <- function(files) {
+
   files$ox_theme_results <- calculate_theme_results_ox(
     prepare_theme_results_inputs(files)
   )
@@ -83,4 +176,3 @@ calculate_themes <- function(files) {
 
   files
 }
-
