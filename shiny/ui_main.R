@@ -495,6 +495,19 @@ build_ui <- function() {
                 div(
                   class = "advanced-options-body",
 
+                  checkboxInput(
+                    inputId = "show_other_theme_groupings",
+                    label = "Show other theme groupings",
+                    value = FALSE
+                  ),
+
+                  tags$hr(),
+
+                  div(
+                    class = "advanced-options-heading",
+                    "Export data"
+                  ),
+
                   div(
                     class = "advanced-options-heading",
                     "Export data"
@@ -593,7 +606,7 @@ build_ui <- function() {
 
         div(
           class = "notes-sources-panel",
-          shiny::includeMarkdown("shiny/notes_sources.Rmd")
+          shiny::includeMarkdown(app_file("notes_sources.Rmd"))
         )
       )
     )
